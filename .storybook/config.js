@@ -1,7 +1,8 @@
-import { configure, addDecorator } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 import styled from 'styled-components/macro'
+import { configure, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+
 import GlobalStyles from '../src/GlobalStyles'
 
 // automatically import all files ending in *.stories.js
@@ -16,7 +17,7 @@ addDecorator(storyFn => (
 ))
 
 const Wrapper = styled.div`
-  max-width: 500px;
-  border: 1px solid black;
-  padding: 20px;
+  width: 375px;
+  outline: 1px solid black;
+  padding: 15px;
 `
