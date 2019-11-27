@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Club from './Club'
+import clubs from './clubs'
+import styled from 'styled-components/macro'
+import GlobalStyles from './GlobalStyles'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyles />
+      <Grid>
+        {clubs.map(({ logo, name, websiteURL, websiteName, _id }) => (
+          <Club
+            key={_id}
+            logo={logo}
+            clubName={name}
+            websiteURL={websiteURL}
+            websiteName={websiteName}
+          />
+        ))}
+      </Grid>
+    </>
+  )
 }
 
-export default App;
+const Grid = styled.section`
+  display: grid;
+  margin: 20px 15px;
+  justify-content: center;
+  gap: 20px;
+`
