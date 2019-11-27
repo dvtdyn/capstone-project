@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components/macro'
 
 export default createGlobalStyle`
 :root{
-  
+  font-size: 62.5%;
 }
   *{
     box-sizing: border-box;
