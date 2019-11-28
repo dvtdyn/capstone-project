@@ -4,6 +4,8 @@
     "name": "Eimsbütteler TV",
     "websiteURL": "https://etv-hamburg.de/",
     "websiteName": "etv-hamburg.de",
+    "phoneNumber": "0049404017690",
+    "mail": "info@etv-hamburg.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eimsb%C3%BCttelerTV.svg/800px-Eimsb%C3%BCttelerTV.svg.png"
   },
   {
@@ -11,6 +13,8 @@
     "name": "SC Victoria Hamburg",
     "websiteURL": "http://www.sc-victoria.de/",
     "websiteName": "sc-victoria.de",
+    "phoneNumber": "0049404225160",
+    "mail": "info@sc-victoria.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Scvictoria-logo.svg/1920px-Scvictoria-logo.svg.png "
   },
   {
@@ -18,6 +22,8 @@
     "name": "FC Alsterbrüder",
     "websiteURL": "http://www.fcalsterbrueder.org/",
     "websiteName": "fcalsterbrueder.org",
+    "phoneNumber": "00491702194315",
+    "mail": "mail@alsterbrueder.de",
     "logo": "https://alsterbrueder.de/wp-content/uploads/cropped-alsterbrueder_logo_transp.png"
   },
   {
@@ -25,6 +31,8 @@
     "name": "Altona 93",
     "websiteURL": "http://www.altona93.de/",
     "websiteName": "altona93.de",
+    "phoneNumber": "00494053547041",
+    "mail": "office@altona93.de",
     "logo": "https://upload.wikimedia.org/wikipedia/de/3/39/Altona_93.svg"
   },
   {
@@ -32,6 +40,8 @@
     "name": "SC Concordia Hamburg",
     "websiteURL": "https://www.wtsvc81.de/",
     "websiteName": "wtsvc81.de",
+    "phoneNumber": "0049406534713",
+    "mail": "kontakt@wtsvc81.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cordi_imp.svg/2000px-Cordi_imp.svg.png "
   },
   {
@@ -39,6 +49,8 @@
     "name": "Niendorfer TSV",
     "websiteURL": "https://www.niendorfer-tsv.de/",
     "websiteName": "niendorfer-tsv.de",
+    "phoneNumber": "0049405542160",
+    "mail": "info@niendorfer-tsv.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Niendorfer_TSV_logo.svg"
   },
   {
@@ -46,6 +58,8 @@
     "name": "TuS Osdorf",
     "websiteURL": "https://www.tus-osdorf.de/",
     "websiteName": "tus-osdorf.de",
+    "phoneNumber": "0049408003664",
+    "mail": "info@tus-osdorf.de",
     "logo": "https://cdn.fupa.net/club/png/200x200/Qv7z7V2foER9QY3UjyIf1ibme2zKXUFzsPpcIFEr"
   },
   {
@@ -53,6 +67,8 @@
     "name": "Union 03 Altona",
     "websiteURL": "https://union03.de/",
     "websiteName": "union03.de",
+    "phoneNumber": "0049408501033",
+    "mail": "info@union03.de",
     "logo": "https://upload.wikimedia.org/wikipedia/de/b/b6/Logo_SC_Union.gif"
   },
   {
@@ -60,6 +76,8 @@
     "name": "Grün-Weiß Eimsbüttel",
     "websiteURL": "http://www.gweimsbuettel.de/",
     "websiteName": "gweimsbuettel.de",
+    "phoneNumber": "00494041424700",
+    "mail": "info@gweimsbuettel.de",
     "logo": "https://tmssl.akamaized.net//images/wappen/head/23674.png?lm=1415699993"
   },
   {
@@ -67,6 +85,8 @@
     "name": "HEBC",
     "websiteURL": "https://www.hebc.de/",
     "websiteName": "hebc.de",
+    "phoneNumber": "00491625153892",
+    "mail": "hebchamburg@yahoo.de",
     "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/0/0f/HEBC_Hamburg.svg/800px-HEBC_Hamburg.svg.png"
   },
   {
@@ -74,6 +94,8 @@
     "name": "SV Lurup",
     "websiteURL": "http://www.svlurup.de/",
     "websiteName": "svlurup.de",
+    "phoneNumber": "0049408315546",
+    "mail": "info@svlurup.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SV_Lurup.svg/800px-SV_Lurup.svg.png"
   },
   {
@@ -81,6 +103,8 @@
     "name": "VfL 93 Hamburg",
     "websiteURL": "https://www.vfl93.de/",
     "websiteName": "vfl93.de",
+    "phoneNumber": "0049402798377",
+    "mail": "info@vfl93.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/Vfl93hamburg.gif"
   },
   {
@@ -88,6 +112,8 @@
     "name": "ASV Bergedorf 85",
     "websiteURL": "https://asv-bergedorf85-fussball.de/",
     "websiteName": "asv-bergedorf85-fussball.de",
+    "phoneNumber": "0049407381885",
+    "mail": "geschaeftsstelle@asv-bergedorf85.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Asvbergedorf.svg"
   },
   {
@@ -95,6 +121,8 @@
     "name": "Bramfelder SV",
     "websiteURL": "https://www.bramfelder-sv.com/",
     "websiteName": "bramfelder-sv.com",
+    "phoneNumber": "0049406414144",
+    "mail": "info@bramfelder-sv.net",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bramfelder_SV_Logo.svg"
   },
   {
@@ -102,6 +130,8 @@
     "name": "SC Condor Hamburg",
     "websiteURL": "http://www.sccondor.de/",
     "websiteName": "sccondor.de",
+    "phoneNumber": "0049406432749",
+    "mail": "info@sccondor.de",
     "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/6/66/SC_Condor_Hamburg.svg/800px-SC_Condor_Hamburg.svg.png"
   },
   {
@@ -109,6 +139,8 @@
     "name": "SC Poppenbüttel",
     "websiteURL": "https://www.scpoppenbuettel.de/",
     "websiteName": "scpoppenbuettel.de",
+    "phoneNumber": "0049406061414",
+    "mail": "geschaeftsstelle@scpoppenbuettel.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/SCPoppenb%C3%BCttel.svg/800px-SCPoppenb%C3%BCttel.svg.png"
   },
   {
@@ -116,6 +148,8 @@
     "name": "Germania Schnelsen",
     "websiteURL": "https://www.tusgs.de/",
     "websiteName": "tusgs.de",
+    "phoneNumber": "0049405503184",
+    "mail": "info@tusgs.de",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/3/33/Germania_Schnelsen_Logo.png"
   },
   {
@@ -123,6 +157,8 @@
     "name": "USC Paloma Hamburg",
     "websiteURL": "http://www.uscpaloma.de/",
     "websiteName": "uscpaloma.de",
+    "phoneNumber": "",
+    "mail": "",
     "logo": "https://upload.wikimedia.org/wikipedia/de/e/e4/USC_Paloma_Logo.png"
   },
   {
@@ -130,6 +166,8 @@
     "name": "Meiendorfer SV",
     "websiteURL": "https://www.msvhamburg.de/",
     "websiteName": "msvhamburg.de",
+    "phoneNumber": "004940294126",
+    "mail": "info@uscpaloma.de",
     "logo": "https://image.jimcdn.com/app/cms/image/transf/none/path/sefbbb57077ebf4f9/image/i6c190ec63714a771/version/1479471542/image.png"
   },
   {
@@ -137,6 +175,8 @@
     "name": "SC Hansa 11",
     "websiteURL": "https://www.schansa11.de/",
     "websiteName": "schansa11.de",
+    "phoneNumber": "0049404392578",
+    "mail": "info@schansa11.de",
     "logo": "https://www.schansa11.de/wp-content/uploads/2017/03/SCHANSA11_Logo_2.png"
   }
 ]

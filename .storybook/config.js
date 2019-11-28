@@ -19,5 +19,5 @@ addDecorator(storyFn => (
 const Wrapper = styled.div`
   width: 375px;
   outline: 1px solid black;
-  padding: 15px;
+  padding: 10px;
 `
