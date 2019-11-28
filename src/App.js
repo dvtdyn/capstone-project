@@ -9,15 +9,18 @@ export default function App() {
     <>
       <GlobalStyles />
       <Grid>
-        {clubs.map(({ logo, name, websiteURL, websiteName, _id }) => (
-          <Club
-            key={_id}
-            logo={logo}
-            clubName={name}
-            websiteURL={websiteURL}
-            websiteName={websiteName}
-          />
-        ))}
+        {clubs
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(({ logo, name, websiteURL, _id, phoneNumber, mail }) => (
+            <Club
+              key={_id}
+              logo={logo}
+              clubName={name}
+              websiteURL={websiteURL}
+              phoneNumber={phoneNumber}
+              mail={mail}
+            />
+          ))}
       </Grid>
     </>
   )
