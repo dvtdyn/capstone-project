@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import websiteIcon from './assets/icons/website.svg'
 import phoneIcon from './assets/icons/phone.svg'
 import mailIcon from './assets/icons/mail.svg'
+import ClubButton from './ClubButton'
 
 export default function Club({
   logo,
@@ -17,15 +18,14 @@ export default function Club({
       <ClubTextWrapper>
         <ClubName>{clubName.toUpperCase()}</ClubName>
         <ButtonsWrapper>
-          <ButtonContainer href={'tel:' + phoneNumber}>
-            <img src={phoneIcon} alt="Phone" />
-          </ButtonContainer>
-          <ButtonContainer href={'mailto:' + mail}>
-            <img src={mailIcon} alt="Mail" />
-          </ButtonContainer>
-          <ButtonContainer href={websiteURL} target="_blank">
-            <img src={websiteIcon} alt="Website" />
-          </ButtonContainer>
+          <ClubButton href={'tel:' + phoneNumber} src={phoneIcon} alt="Phone" />
+          <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
+          <ClubButton
+            href={websiteURL}
+            src={websiteIcon}
+            alt="Website"
+            target="_blank"
+          />
         </ButtonsWrapper>
       </ClubTextWrapper>
     </ClubBody>
@@ -37,7 +37,7 @@ const ClubBody = styled.section`
   grid-auto-flow: column;
   height: 100px;
   grid-template-columns: 75px auto;
-  padding: 10px 5px;
+  padding: 10px 5px 10px 10px;
   border-radius: 8px;
   background-color: #494e61;
 `
@@ -67,12 +67,4 @@ const ClubName = styled.p`
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-`
-
-const ButtonContainer = styled.a`
-  display: flex;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
 `

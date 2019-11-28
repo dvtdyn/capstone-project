@@ -3,11 +3,7 @@ import Club from './Club'
 import clubs from './clubs'
 import styled from 'styled-components/macro'
 import GlobalStyles from './GlobalStyles'
-console.log(
-  clubs.sort(function(a, b) {
-    return a.value > b.value
-  })
-)
+
 export default function App() {
   return (
     <>
