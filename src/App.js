@@ -1,34 +1,23 @@
 import React from 'react'
-import Club from './Club'
 import clubs from './clubs'
-import styled from 'styled-components/macro'
 import GlobalStyles from './GlobalStyles'
+import ClubList from './ClubList'
+import { Switch, Route } from 'react-router-dom'
+import ClubOverview from './ClubOverview'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 export default function App() {
   return (
     <>
-      <GlobalStyles />
-      <Grid>
-        {clubs
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map(({ logo, name, websiteURL, _id, phoneNumber, mail }) => (
-            <Club
-              key={_id}
-              logo={logo}
-              clubName={name}
-              websiteURL={websiteURL}
-              phoneNumber={phoneNumber}
-              mail={mail}
-            />
-          ))}
-      </Grid>
+      <Router>
+        <GlobalStyles />
+        <Switch>
+          <Route exact path="/">
+            <ClubList clubs={clubs} />
+          </Route>
+          <Route path="/:clubName" component={ClubOverview} />
+        </Switch>
+      </Router>
     </>
   )
 }
-
-const Grid = styled.section`
-  display: grid;
-  margin: 20px 15px;
-  justify-content: center;
-  gap: 20px;
-`

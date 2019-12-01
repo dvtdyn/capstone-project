@@ -4,6 +4,7 @@ import websiteIcon from './assets/icons/website.svg'
 import phoneIcon from './assets/icons/phone.svg'
 import mailIcon from './assets/icons/mail.svg'
 import ClubButton from './ClubButton'
+import { Link } from 'react-router-dom'
 
 export default function Club({
   logo,
@@ -14,9 +15,11 @@ export default function Club({
 }) {
   return (
     <ClubBody>
-      <Logo src={logo} />
+      <LinkWrapper to={`/${clubName}`}>
+        <Logo src={logo} />
+      </LinkWrapper>
       <ClubTextWrapper>
-        <ClubName>{clubName.toUpperCase()}</ClubName>
+        <ClubName to={`/${clubName}`}>{clubName.toUpperCase()}</ClubName>
         <ButtonsWrapper>
           <ClubButton href={'tel:' + phoneNumber} src={phoneIcon} alt="Phone" />
           <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
@@ -36,26 +39,29 @@ const ClubBody = styled.section`
   display: grid;
   grid-auto-flow: column;
   height: 100px;
-  grid-template-columns: 75px auto;
-  padding: 10px 5px 10px 10px;
+  grid-template-columns: 85px auto;
+  align-content: center;
   border-radius: 8px;
   background-color: #494e61;
+  text-decoration: none;
+`
+const LinkWrapper = styled(Link)`
+  width: 85px;
+  padding: 10px 0 10px 10px;
+  text-align: center;
 `
 
 const Logo = styled.img`
   max-height: 75px;
   max-width: 75px;
-  margin: 0 auto;
 `
 
 const ClubTextWrapper = styled.div`
-  height: 90px;
+  height: 100px;
   display: grid;
-  gap: 10px;
-  padding-left: 10px;
 `
 
-const ClubName = styled.p`
+const ClubName = styled(Link)`
   margin: 0;
   font-weight: 300;
   color: #fff;
@@ -63,8 +69,11 @@ const ClubName = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  padding: 10px 5px 0 10px;
+  text-decoration: none;
 `
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 5px;
 `
