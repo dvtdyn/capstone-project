@@ -2,6 +2,7 @@
   {
     "_id": "5ddd0f9916e0ea89758f1668",
     "name": "Eimsbütteler TV",
+    "slug": "eimsbuetteler-tv",
     "websiteURL": "https://etv-hamburg.de/",
     "websiteName": "etv-hamburg.de",
     "phoneNumber": "0049404017690",
@@ -9,19 +10,19 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eimsb%C3%BCttelerTV.svg/800px-Eimsb%C3%BCttelerTV.svg.png",
     "teams": [
       {
-        "name": "Eimsbüttel 1",
+        "name": "1. Herren",
         "league": "Landesliga"
       },
       {
-        "name": "Eimsbüttel 2",
+        "name": "2. Herren",
         "league": "Kreisliga"
       },
       {
-        "name": "Eimsbüttel 3",
+        "name": "3. Herren",
         "league": "Kreisliga"
       },
       {
-        "name": "Eimsbüttel 4",
+        "name": "4. Herren",
         "league": "Kreisklasse"
       }
     ],
@@ -35,6 +36,7 @@
   {
     "_id": "5ddd0f9944312b4dc33ad2a7",
     "name": "SC Victoria Hamburg",
+    "slug": "sc-victoria-hamburg",
     "websiteURL": "http://www.sc-victoria.de/",
     "websiteName": "sc-victoria.de",
     "phoneNumber": "0049404225160",
@@ -42,32 +44,37 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Scvictoria-logo.svg/1920px-Scvictoria-logo.svg.png ",
     "teams": [
       {
-        "name": "Eimsbüttel 1",
-        "league": "Landesliga"
+        "name": "1. Herren",
+        "league": "Oberliga"
       },
       {
-        "name": "Eimsbüttel 2",
+        "name": "2. Herren",
+        "league": "Bezirksliga"
+      },
+      {
+        "name": "3. Herren",
         "league": "Kreisliga"
       },
       {
-        "name": "Eimsbüttel 3",
+        "name": "4. Herren",
         "league": "Kreisliga"
       },
       {
-        "name": "Eimsbüttel 4",
+        "name": "5. Herren",
         "league": "Kreisklasse"
       }
     ],
     "address": {
-      "zip": "20144",
-      "street": "Bundesstraße",
-      "houseNumber": "96",
+      "zip": "22529",
+      "street": "Lokstedter Steindamm",
+      "houseNumber": "87",
       "city": "Hamburg"
     }
   },
   {
     "_id": "5ddd0f99258e73536a5ab40c",
     "name": "FC Alsterbrüder",
+    "slug": "fc-alsterbrueder",
     "websiteURL": "http://www.fcalsterbrueder.org/",
     "websiteName": "fcalsterbrueder.org",
     "phoneNumber": "00491702194315",
@@ -101,6 +108,7 @@
   {
     "_id": "5ddd0f99bfdb53d38da56003",
     "name": "Altona 93",
+    "slug": "altona-93",
     "websiteURL": "http://www.altona93.de/",
     "websiteName": "altona93.de",
     "phoneNumber": "00494053547041",
@@ -134,6 +142,7 @@
   {
     "_id": "5ddd0f9907d5eb154347d452",
     "name": "SC Concordia Hamburg",
+    "slug": "sc-concordia-hamburg",
     "websiteURL": "https://www.wtsvc81.de/",
     "websiteName": "wtsvc81.de",
     "phoneNumber": "0049406534713",
@@ -167,6 +176,7 @@
   {
     "_id": "5ddd0f99c58f0df8e7556c81",
     "name": "Niendorfer TSV",
+    "slug": "niendorfer-tsv",
     "websiteURL": "https://www.niendorfer-tsv.de/",
     "websiteName": "niendorfer-tsv.de",
     "phoneNumber": "0049405542160",
@@ -200,6 +210,7 @@
   {
     "_id": "5ddd0f99367a1c61fe1bea00",
     "name": "TuS Osdorf",
+    "slug": "tus-osdorf",
     "websiteURL": "https://www.tus-osdorf.de/",
     "websiteName": "tus-osdorf.de",
     "phoneNumber": "0049408003664",
@@ -233,6 +244,7 @@
   {
     "_id": "5ddd0f990d1f9fcb6217e079",
     "name": "Union 03 Altona",
+    "slug": "union-03-altona",
     "websiteURL": "https://union03.de/",
     "websiteName": "union03.de",
     "phoneNumber": "0049408501033",
@@ -266,6 +278,7 @@
   {
     "_id": "5ddd0f99732505855929c14d",
     "name": "Grün-Weiß Eimsbüttel",
+    "slug": "gruen-weiss-eimsbuettel",
     "websiteURL": "http://www.gweimsbuettel.de/",
     "websiteName": "gweimsbuettel.de",
     "phoneNumber": "00494041424700",
@@ -299,6 +312,7 @@
   {
     "_id": "5ddd0f9996f834dd5d5bd8da",
     "name": "HEBC",
+    "slug": "hebc",
     "websiteURL": "https://www.hebc.de/",
     "websiteName": "hebc.de",
     "phoneNumber": "00491625153892",
@@ -332,6 +346,7 @@
   {
     "_id": "5ddd0f99123f72f7170756f4",
     "name": "SV Lurup",
+    "slug": "sv-lurup",
     "websiteURL": "http://www.svlurup.de/",
     "websiteName": "svlurup.de",
     "phoneNumber": "0049408315546",
@@ -365,6 +380,7 @@
   {
     "_id": "5ddd0f991d422cf1855a4eb5",
     "name": "VfL 93 Hamburg",
+    "slug": "vfl-93-hamburg",
     "websiteURL": "https://www.vfl93.de/",
     "websiteName": "vfl93.de",
     "phoneNumber": "0049402798377",
@@ -398,6 +414,7 @@
   {
     "_id": "5ddd0f99caca8a21e794175c",
     "name": "ASV Bergedorf 85",
+    "slug": "asv-bergedorf-85",
     "websiteURL": "https://asv-bergedorf85-fussball.de/",
     "websiteName": "asv-bergedorf85-fussball.de",
     "phoneNumber": "0049407381885",
@@ -431,6 +448,7 @@
   {
     "_id": "5ddd0f99d0a3b19d0c97194a",
     "name": "Bramfelder SV",
+    "slug": "bramfelder-sv",
     "websiteURL": "https://www.bramfelder-sv.com/",
     "websiteName": "bramfelder-sv.com",
     "phoneNumber": "0049406414144",
@@ -464,6 +482,7 @@
   {
     "_id": "5ddd0f991394733c5615bff0",
     "name": "SC Condor Hamburg",
+    "slug": "sc-condor-hamburg",
     "websiteURL": "http://www.sccondor.de/",
     "websiteName": "sccondor.de",
     "phoneNumber": "0049406432749",
@@ -497,6 +516,7 @@
   {
     "_id": "5ddd0f99b3236345a8c5c179",
     "name": "SC Poppenbüttel",
+    "slug": "sc-poppenbuettel",
     "websiteURL": "https://www.scpoppenbuettel.de/",
     "websiteName": "scpoppenbuettel.de",
     "phoneNumber": "0049406061414",
@@ -530,6 +550,7 @@
   {
     "_id": "5ddd0f99274249d71f446141",
     "name": "Germania Schnelsen",
+    "slug": "germania-schnelsen",
     "websiteURL": "https://www.tusgs.de/",
     "websiteName": "tusgs.de",
     "phoneNumber": "0049405503184",
@@ -563,6 +584,7 @@
   {
     "_id": "5ddd0f99f26f032eef135af3",
     "name": "USC Paloma Hamburg",
+    "slug": "usc-paloma-hamburg",
     "websiteURL": "http://www.uscpaloma.de/",
     "websiteName": "uscpaloma.de",
     "phoneNumber": "",
@@ -596,6 +618,7 @@
   {
     "_id": "5ddd0f991576f6b6d90e8cda",
     "name": "Meiendorfer SV",
+    "slug": "meiendorfer-sv",
     "websiteURL": "https://www.msvhamburg.de/",
     "websiteName": "msvhamburg.de",
     "phoneNumber": "004940294126",
@@ -629,6 +652,7 @@
   {
     "_id": "5ddd0f9990abe02deaec2d32",
     "name": "SC Hansa 11",
+    "slug": "sc-hansa-11",
     "websiteURL": "https://www.schansa11.de/",
     "websiteName": "schansa11.de",
     "phoneNumber": "0049404392578",

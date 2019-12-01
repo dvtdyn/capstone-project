@@ -1,37 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import etvImage from './assets/images/ETV.jpg'
 import ClubButton from './ClubButton'
-export default function ClubOverview({
-  logo,
-  clubName,
-  phoneNumber,
-  phoneIcon,
-  mail,
-  mailIcon,
-  websiteURL,
-  websiteIcon,
-  zip,
-  street,
-  houseNumber,
-  city,
-  teams,
-}) {
+import phoneIcon from './assets/icons/phone.svg'
+import mailIcon from './assets/icons/mail.svg'
+import websiteIcon from './assets/icons/website.svg'
+import clubs from './clubs'
+
+export default function ClubOverview() {
+  const [club, setClub] = useState({})
+
+  useEffect(() => {
+    setClub(getClubFromSlug(clubs))
+  }, [])
+
   return (
     <ClubOverviewContainer>
       <ClubImage src={etvImage} />
-      <ClubTextWrapper logo={logo}>
+      <ClubTextWrapper logo={club.logo}>
         <Wrapper>
-          <h1>{clubName.toUpperCase()}</h1>
+          <h1>{club.name && club.name.toUpperCase()}</h1>
           <ButtonsWrapper>
             <ClubButton
-              href={'tel:' + phoneNumber}
+              href={'tel:' + club.phoneNumber}
               src={phoneIcon}
               alt="Phone"
             />
-            <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
             <ClubButton
-              href={websiteURL}
+              href={'mailto:' + club.mail}
+              src={mailIcon}
+              alt="Mail"
+            />
+            <ClubButton
+              href={club.websiteURL}
               src={websiteIcon}
               alt="Website"
               target="_blank"
@@ -40,20 +41,30 @@ export default function ClubOverview({
         </Wrapper>
         <Wrapper>
           <h2>Address</h2>
-          <p>{`${street} ${houseNumber}, ${zip} ${city}`}</p>
+          <p>
+            {club.address &&
+              `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
+          </p>
         </Wrapper>
         <Wrapper>
           <h2>Teams</h2>
-          {teams.map(({ name, league }) => (
-            <>
-              <h3>{name}</h3>
-              <p>{league}</p>
-            </>
-          ))}
+          {club.teams &&
+            club.teams.map(({ name, league }) => (
+              <>
+                <h3>{name}</h3>
+                <p>{league}</p>
+              </>
+            ))}
         </Wrapper>
       </ClubTextWrapper>
     </ClubOverviewContainer>
   )
+
+  function getClubFromSlug(clubs) {
+    const slug = window.location.pathname.replace('/club/', '')
+    const club = clubs.filter(club => club.slug.toLowerCase() === slug)[0]
+    return club
+  }
 }
 
 const ClubOverviewContainer = styled.div`

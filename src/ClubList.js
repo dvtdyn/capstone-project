@@ -7,14 +7,15 @@ export default function ClubList({ clubs }) {
     <Grid>
       {clubs
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map(({ logo, name, websiteURL, _id, phoneNumber, mail }) => (
+        .map(({ logo, name, websiteURL, _id, phoneNumber, mail, slug }) => (
           <Club
             key={_id}
             logo={logo}
-            clubName={name}
+            name={name}
             websiteURL={websiteURL}
             phoneNumber={phoneNumber}
             mail={mail}
+            slug={slug}
           />
         ))}
     </Grid>

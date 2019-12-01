@@ -14,8 +14,9 @@ export const club = () => (
       'Logo',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eimsb%C3%BCttelerTV.svg/800px-Eimsb%C3%BCttelerTV.svg.png'
     )}
-    clubName={text('Clubname', 'Eimsbütteler TV AAAAAAAAAAAAA')}
+    name={text('Clubname', 'Eimsbütteler TV AAAAAAAAAAAAA')}
     websiteURL={text('URL', 'https://etv-hamburg.de/')}
     websiteName={text('WebsiteName', 'etv-hamburg.de AAAAAAAAAAAAA')}
+    slug={text('Slug', 'eimsbuetteler-tv')}
   />
 )

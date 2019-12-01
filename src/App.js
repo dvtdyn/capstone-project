@@ -12,10 +12,8 @@ export default function App() {
       <Router>
         <GlobalStyles />
         <Switch>
-          <Route exact path="/">
-            <ClubList clubs={clubs} />
-          </Route>
-          <Route path="/:clubName" component={ClubOverview} />
+          <Route exact path="/" render={() => <ClubList clubs={clubs} />} />
+          <Route path="/club" render={() => <ClubOverview />} />
         </Switch>
       </Router>
     </>

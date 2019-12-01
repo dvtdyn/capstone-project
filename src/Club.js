@@ -8,18 +8,21 @@ import { Link } from 'react-router-dom'
 
 export default function Club({
   logo,
-  clubName,
+  name,
   websiteURL,
   phoneNumber,
   mail,
+  slug,
 }) {
+  const clubUrl = `/club/${slug}`
+
   return (
     <ClubBody>
-      <LinkWrapper to={`/${clubName}`}>
+      <LinkWrapper to={clubUrl}>
         <Logo src={logo} />
       </LinkWrapper>
       <ClubTextWrapper>
-        <ClubName to={`/${clubName}`}>{clubName.toUpperCase()}</ClubName>
+        <ClubName to={clubUrl}>{name.toUpperCase()}</ClubName>
         <ButtonsWrapper>
           <ClubButton href={'tel:' + phoneNumber} src={phoneIcon} alt="Phone" />
           <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
