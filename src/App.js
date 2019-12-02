@@ -2,9 +2,8 @@ import React from 'react'
 import clubs from './clubs'
 import GlobalStyles from './GlobalStyles'
 import ClubList from './ClubList'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ClubOverview from './ClubOverview'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 export default function App() {
   return (

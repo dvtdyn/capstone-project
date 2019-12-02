@@ -77,12 +77,15 @@ const ClubTextWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: 90px 80px auto;
+
   &:after {
     content: '';
+    max-height: 417px;
     height: 100%;
     width: 100%;
     position: absolute;
-    background: url(${props => props.logo}) no-repeat center center;
+    background: url(${props => props.logo}) no-repeat center;
+
     opacity: 0.05;
     background-size: contain;
   }
@@ -107,7 +110,6 @@ const Wrapper = styled.section`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    opacity: 1;
   }
 
   h2 {
