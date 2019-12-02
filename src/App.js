@@ -11,8 +11,12 @@ export default function App() {
       <Router>
         <GlobalStyles />
         <Switch>
-          <Route exact path="/" render={() => <ClubList clubs={clubs} />} />
-          <Route path="/club" render={() => <ClubOverview />} />
+          <Route exact path="/">
+            <ClubList clubs={clubs} />
+          </Route>
+          <Route path="/club/:slug">
+            <ClubOverview clubs={clubs} />
+          </Route>
         </Switch>
       </Router>
     </>
