@@ -2,181 +2,685 @@
   {
     "_id": "5ddd0f9916e0ea89758f1668",
     "name": "Eimsbütteler TV",
+    "slug": "eimsbuetteler-tv",
     "websiteURL": "https://etv-hamburg.de/",
     "websiteName": "etv-hamburg.de",
     "phoneNumber": "0049404017690",
     "mail": "info@etv-hamburg.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eimsb%C3%BCttelerTV.svg/800px-Eimsb%C3%BCttelerTV.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eimsb%C3%BCttelerTV.svg/800px-Eimsb%C3%BCttelerTV.svg.png",
+    "teams": [
+      {
+        "name": "1. Herren",
+        "league": "Landesliga"
+      },
+      {
+        "name": "2. Herren",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "3. Herren",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "4. Herren",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f9944312b4dc33ad2a7",
     "name": "SC Victoria Hamburg",
+    "slug": "sc-victoria-hamburg",
     "websiteURL": "http://www.sc-victoria.de/",
     "websiteName": "sc-victoria.de",
     "phoneNumber": "0049404225160",
     "mail": "info@sc-victoria.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Scvictoria-logo.svg/1920px-Scvictoria-logo.svg.png "
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Scvictoria-logo.svg/1920px-Scvictoria-logo.svg.png ",
+    "teams": [
+      {
+        "name": "1. Herren",
+        "league": "Oberliga"
+      },
+      {
+        "name": "2. Herren",
+        "league": "Bezirksliga"
+      },
+      {
+        "name": "3. Herren",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "4. Herren",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "5. Herren",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "22529",
+      "street": "Lokstedter Steindamm",
+      "houseNumber": "87",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99258e73536a5ab40c",
     "name": "FC Alsterbrüder",
+    "slug": "fc-alsterbrueder",
     "websiteURL": "http://www.fcalsterbrueder.org/",
     "websiteName": "fcalsterbrueder.org",
     "phoneNumber": "00491702194315",
     "mail": "mail@alsterbrueder.de",
-    "logo": "https://alsterbrueder.de/wp-content/uploads/cropped-alsterbrueder_logo_transp.png"
+    "logo": "https://alsterbrueder.de/wp-content/uploads/cropped-alsterbrueder_logo_transp.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99bfdb53d38da56003",
     "name": "Altona 93",
+    "slug": "altona-93",
     "websiteURL": "http://www.altona93.de/",
     "websiteName": "altona93.de",
     "phoneNumber": "00494053547041",
     "mail": "office@altona93.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/de/3/39/Altona_93.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/de/3/39/Altona_93.svg",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f9907d5eb154347d452",
     "name": "SC Concordia Hamburg",
+    "slug": "sc-concordia-hamburg",
     "websiteURL": "https://www.wtsvc81.de/",
     "websiteName": "wtsvc81.de",
     "phoneNumber": "0049406534713",
     "mail": "kontakt@wtsvc81.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cordi_imp.svg/2000px-Cordi_imp.svg.png "
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cordi_imp.svg/2000px-Cordi_imp.svg.png ",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99c58f0df8e7556c81",
     "name": "Niendorfer TSV",
+    "slug": "niendorfer-tsv",
     "websiteURL": "https://www.niendorfer-tsv.de/",
     "websiteName": "niendorfer-tsv.de",
     "phoneNumber": "0049405542160",
     "mail": "info@niendorfer-tsv.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Niendorfer_TSV_logo.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Niendorfer_TSV_logo.svg",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99367a1c61fe1bea00",
     "name": "TuS Osdorf",
+    "slug": "tus-osdorf",
     "websiteURL": "https://www.tus-osdorf.de/",
     "websiteName": "tus-osdorf.de",
     "phoneNumber": "0049408003664",
     "mail": "info@tus-osdorf.de",
-    "logo": "https://cdn.fupa.net/club/png/200x200/Qv7z7V2foER9QY3UjyIf1ibme2zKXUFzsPpcIFEr"
+    "logo": "https://cdn.fupa.net/club/png/200x200/Qv7z7V2foER9QY3UjyIf1ibme2zKXUFzsPpcIFEr",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f990d1f9fcb6217e079",
     "name": "Union 03 Altona",
+    "slug": "union-03-altona",
     "websiteURL": "https://union03.de/",
     "websiteName": "union03.de",
     "phoneNumber": "0049408501033",
     "mail": "info@union03.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/de/b/b6/Logo_SC_Union.gif"
+    "logo": "https://upload.wikimedia.org/wikipedia/de/b/b6/Logo_SC_Union.gif",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99732505855929c14d",
     "name": "Grün-Weiß Eimsbüttel",
+    "slug": "gruen-weiss-eimsbuettel",
     "websiteURL": "http://www.gweimsbuettel.de/",
     "websiteName": "gweimsbuettel.de",
     "phoneNumber": "00494041424700",
     "mail": "info@gweimsbuettel.de",
-    "logo": "https://tmssl.akamaized.net//images/wappen/head/23674.png?lm=1415699993"
+    "logo": "https://tmssl.akamaized.net//images/wappen/head/23674.png?lm=1415699993",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f9996f834dd5d5bd8da",
     "name": "HEBC",
+    "slug": "hebc",
     "websiteURL": "https://www.hebc.de/",
     "websiteName": "hebc.de",
     "phoneNumber": "00491625153892",
     "mail": "hebchamburg@yahoo.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/0/0f/HEBC_Hamburg.svg/800px-HEBC_Hamburg.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/0/0f/HEBC_Hamburg.svg/800px-HEBC_Hamburg.svg.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99123f72f7170756f4",
     "name": "SV Lurup",
+    "slug": "sv-lurup",
     "websiteURL": "http://www.svlurup.de/",
     "websiteName": "svlurup.de",
     "phoneNumber": "0049408315546",
     "mail": "info@svlurup.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SV_Lurup.svg/800px-SV_Lurup.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/SV_Lurup.svg/800px-SV_Lurup.svg.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f991d422cf1855a4eb5",
     "name": "VfL 93 Hamburg",
+    "slug": "vfl-93-hamburg",
     "websiteURL": "https://www.vfl93.de/",
     "websiteName": "vfl93.de",
     "phoneNumber": "0049402798377",
     "mail": "info@vfl93.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/Vfl93hamburg.gif"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/Vfl93hamburg.gif",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99caca8a21e794175c",
     "name": "ASV Bergedorf 85",
+    "slug": "asv-bergedorf-85",
     "websiteURL": "https://asv-bergedorf85-fussball.de/",
     "websiteName": "asv-bergedorf85-fussball.de",
     "phoneNumber": "0049407381885",
     "mail": "geschaeftsstelle@asv-bergedorf85.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Asvbergedorf.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Asvbergedorf.svg",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99d0a3b19d0c97194a",
     "name": "Bramfelder SV",
+    "slug": "bramfelder-sv",
     "websiteURL": "https://www.bramfelder-sv.com/",
     "websiteName": "bramfelder-sv.com",
     "phoneNumber": "0049406414144",
     "mail": "info@bramfelder-sv.net",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bramfelder_SV_Logo.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bramfelder_SV_Logo.svg",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f991394733c5615bff0",
     "name": "SC Condor Hamburg",
+    "slug": "sc-condor-hamburg",
     "websiteURL": "http://www.sccondor.de/",
     "websiteName": "sccondor.de",
     "phoneNumber": "0049406432749",
     "mail": "info@sccondor.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/6/66/SC_Condor_Hamburg.svg/800px-SC_Condor_Hamburg.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/6/66/SC_Condor_Hamburg.svg/800px-SC_Condor_Hamburg.svg.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99b3236345a8c5c179",
     "name": "SC Poppenbüttel",
+    "slug": "sc-poppenbuettel",
     "websiteURL": "https://www.scpoppenbuettel.de/",
     "websiteName": "scpoppenbuettel.de",
     "phoneNumber": "0049406061414",
     "mail": "geschaeftsstelle@scpoppenbuettel.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/SCPoppenb%C3%BCttel.svg/800px-SCPoppenb%C3%BCttel.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/SCPoppenb%C3%BCttel.svg/800px-SCPoppenb%C3%BCttel.svg.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99274249d71f446141",
     "name": "Germania Schnelsen",
+    "slug": "germania-schnelsen",
     "websiteURL": "https://www.tusgs.de/",
     "websiteName": "tusgs.de",
     "phoneNumber": "0049405503184",
     "mail": "info@tusgs.de",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/33/Germania_Schnelsen_Logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/33/Germania_Schnelsen_Logo.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f99f26f032eef135af3",
     "name": "USC Paloma Hamburg",
+    "slug": "usc-paloma-hamburg",
     "websiteURL": "http://www.uscpaloma.de/",
     "websiteName": "uscpaloma.de",
     "phoneNumber": "",
     "mail": "",
-    "logo": "https://upload.wikimedia.org/wikipedia/de/e/e4/USC_Paloma_Logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/de/e/e4/USC_Paloma_Logo.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f991576f6b6d90e8cda",
     "name": "Meiendorfer SV",
+    "slug": "meiendorfer-sv",
     "websiteURL": "https://www.msvhamburg.de/",
     "websiteName": "msvhamburg.de",
     "phoneNumber": "004940294126",
     "mail": "info@uscpaloma.de",
-    "logo": "https://image.jimcdn.com/app/cms/image/transf/none/path/sefbbb57077ebf4f9/image/i6c190ec63714a771/version/1479471542/image.png"
+    "logo": "https://image.jimcdn.com/app/cms/image/transf/none/path/sefbbb57077ebf4f9/image/i6c190ec63714a771/version/1479471542/image.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   },
   {
     "_id": "5ddd0f9990abe02deaec2d32",
     "name": "SC Hansa 11",
+    "slug": "sc-hansa-11",
     "websiteURL": "https://www.schansa11.de/",
     "websiteName": "schansa11.de",
     "phoneNumber": "0049404392578",
     "mail": "info@schansa11.de",
-    "logo": "https://www.schansa11.de/wp-content/uploads/2017/03/SCHANSA11_Logo_2.png"
+    "logo": "https://www.schansa11.de/wp-content/uploads/2017/03/SCHANSA11_Logo_2.png",
+    "teams": [
+      {
+        "name": "Eimsbüttel 1",
+        "league": "Landesliga"
+      },
+      {
+        "name": "Eimsbüttel 2",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 3",
+        "league": "Kreisliga"
+      },
+      {
+        "name": "Eimsbüttel 4",
+        "league": "Kreisklasse"
+      }
+    ],
+    "address": {
+      "zip": "20144",
+      "street": "Bundesstraße",
+      "houseNumber": "96",
+      "city": "Hamburg"
+    }
   }
 ]
