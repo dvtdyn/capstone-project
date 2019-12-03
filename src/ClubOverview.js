@@ -10,7 +10,6 @@ import { useParams } from 'react-router-dom'
 export default function ClubOverview({ clubs }) {
   const { slug } = useParams()
   const club = getClubFromSlug(slug)
-
   return (
     <ClubOverviewContainer>
       <ClubImage src={etvImage} />
@@ -44,6 +43,7 @@ export default function ClubOverview({ clubs }) {
           </p>
         </Wrapper>
         <Wrapper>
+          {console.log(clubs.teams)}
           <h2>Teams</h2>
           {club.teams &&
             club.teams.map(({ name, league }) => (
@@ -65,7 +65,7 @@ export default function ClubOverview({ clubs }) {
 const ClubOverviewContainer = styled.div`
   display: grid;
   grid-template-rows: 250px auto;
-
+  height: 100vh;
   background: #494e61;
 `
 const ClubTextWrapper = styled.div`
