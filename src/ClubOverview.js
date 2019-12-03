@@ -43,7 +43,6 @@ export default function ClubOverview({ clubs }) {
           </p>
         </Wrapper>
         <Wrapper>
-          {console.log(clubs.teams)}
           <h2>Teams</h2>
           {club.teams &&
             club.teams.map(({ name, league }) => (
