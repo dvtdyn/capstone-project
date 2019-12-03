@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import etvImage from './assets/images/ETV.jpg'
 import ClubButton from './ClubButton'
 import phoneIcon from './assets/icons/phone.svg'
 import mailIcon from './assets/icons/mail.svg'
 import websiteIcon from './assets/icons/website.svg'
-import clubs from './clubs'
+import { useParams } from 'react-router-dom'
 
-export default function ClubOverview() {
-  const [club, setClub] = useState({})
-
-  useEffect(() => {
-    setClub(getClubFromSlug(clubs))
-  }, [])
+export default function ClubOverview({ clubs }) {
+  const { slug } = useParams()
+  const club = getClubFromSlug(slug)
 
   return (
     <ClubOverviewContainer>
@@ -60,10 +57,8 @@ export default function ClubOverview() {
     </ClubOverviewContainer>
   )
 
-  function getClubFromSlug(clubs) {
-    const slug = window.location.pathname.replace('/club/', '')
-    const club = clubs.filter(club => club.slug.toLowerCase() === slug)[0]
-    return club
+  function getClubFromSlug(slug) {
+    return clubs.find(club => club.slug.toLowerCase() === slug)
   }
 }
 
@@ -80,12 +75,14 @@ const ClubTextWrapper = styled.div`
 
   &:after {
     content: '';
-    max-height: 417px;
+    justify-self: center;
+    max-height: 397px;
+    max-width: 345px;
+    top: 10px;
     height: 100%;
     width: 100%;
     position: absolute;
-    background: url(${props => props.logo}) no-repeat center;
-
+    background: url(${props => props.logo}) no-repeat center center;
     opacity: 0.05;
     background-size: contain;
   }
