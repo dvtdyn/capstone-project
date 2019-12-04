@@ -64,7 +64,7 @@ export default function ClubOverview({ clubs }) {
 const ClubOverviewContainer = styled.div`
   display: grid;
   grid-template-rows: 250px auto;
-  height: 100vh;
+  height: 100%;
   background: #494e61;
 `
 const ClubTextWrapper = styled.div`
