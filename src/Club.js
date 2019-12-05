@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import websiteIcon from './assets/icons/website.svg'
-import phoneIcon from './assets/icons/phone.svg'
-import mailIcon from './assets/icons/mail.svg'
+// import websiteIcon from './assets/icons/website.svg'
+import websiteIcon from './assets/icons/website_dark.svg'
+//import phoneIcon from './assets/icons/phone.svg'
+import phoneIcon from './assets/icons/phone_dark.svg'
+//import mailIcon from './assets/icons/mail.svg'
+import mailIcon from './assets/icons/mail_dark.svg'
 import ClubButton from './ClubButton'
 import { Link } from 'react-router-dom'
 
@@ -45,7 +48,9 @@ const ClubBody = styled.section`
   grid-template-columns: 85px auto;
   align-content: center;
   border-radius: 8px;
-  background-color: #494e61;
+  background-color: #fff;
+  /* background-color: #494e61; */
+
   text-decoration: none;
 `
 const LinkWrapper = styled(Link)`
@@ -67,7 +72,9 @@ const ClubTextWrapper = styled.div`
 const ClubName = styled(Link)`
   margin: 0;
   font-weight: 300;
-  color: #fff;
+  color: #494e61;
+  /* color: #fff; */
+
   font-size: 2.4rem;
   text-overflow: ellipsis;
   overflow: hidden;

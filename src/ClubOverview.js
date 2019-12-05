@@ -2,14 +2,17 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import etvImage from './assets/images/ETV.jpg'
 import ClubButton from './ClubButton'
-import phoneIcon from './assets/icons/phone.svg'
-import mailIcon from './assets/icons/mail.svg'
-import websiteIcon from './assets/icons/website.svg'
+// import phoneIcon from './assets/icons/phone.svg'
+import phoneIcon from './assets/icons/phone_dark.svg'
+// import mailIcon from './assets/icons/mail.svg'
+import mailIcon from './assets/icons/mail_dark.svg'
+// import websiteIcon from './assets/icons/website.svg'
+import websiteIcon from './assets/icons/website_dark.svg'
 import { useParams } from 'react-router-dom'
 
 export default function ClubOverview({ clubs }) {
   const { slug } = useParams()
-  const club = getClubFromSlug(slug)
+  const club = getClubFromSlug(slug) || {}
   return (
     <ClubOverviewContainer>
       <ClubImage src={etvImage} />
@@ -42,7 +45,7 @@ export default function ClubOverview({ clubs }) {
               `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
           </p>
         </Wrapper>
-        <Wrapper>
+        <Wrapper style={{ borderBottom: 'none' }}>
           <h2>Teams</h2>
           {club.teams &&
             club.teams.map(({ name, league }) => (
@@ -63,32 +66,34 @@ export default function ClubOverview({ clubs }) {
 
 const ClubOverviewContainer = styled.div`
   display: grid;
-  grid-template-rows: 250px auto;
-  height: 100%;
-  background: #494e61;
+  grid-template-rows: 232px auto;
 `
 const ClubTextWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: 90px 80px auto;
+  border-radius: 40px 40px 0 0;
+  background: white;
 
   &:after {
     content: '';
     justify-self: center;
     max-height: 397px;
     max-width: 345px;
-    top: 10px;
+    top: 24px;
     height: 100%;
     width: 100%;
     position: absolute;
     background: url(${props => props.logo}) no-repeat center center;
     opacity: 0.05;
+
+    filter: grayscale(1);
     background-size: contain;
   }
 `
 
 const ClubImage = styled.img`
-  height: 100%;
+  height: 272px;
   width: 100%;
   object-fit: cover;
 `
@@ -101,7 +106,8 @@ const Wrapper = styled.section`
   h1 {
     margin: 0;
     font-weight: 300;
-    color: #fff;
+    color: var(--dark);
+    /* color: #fff; */
     font-size: 2.4rem;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -110,7 +116,8 @@ const Wrapper = styled.section`
 
   h2 {
     font-size: 2.4rem;
-    color: #fff;
+    color: var(--dark);
+    /* color: #fff; */
     font-weight: 300;
     margin: 0;
     text-overflow: ellipsis;
@@ -119,7 +126,8 @@ const Wrapper = styled.section`
   }
   h3 {
     font-size: 2.1rem;
-    color: #fff;
+    color: var(--dark);
+    /* color: #fff; */
     font-weight: 300;
     margin: 0;
     padding: 10px 10px 0 10px;
@@ -127,7 +135,8 @@ const Wrapper = styled.section`
     overflow: hidden;
     white-space: nowrap;
     & + p {
-      color: #fff;
+      color: var(--dark);
+      /* color: #fff; */
       font-weight: 300;
       margin: 0;
       padding: 0 10px 0 20px;
@@ -138,7 +147,8 @@ const Wrapper = styled.section`
   }
   p {
     font-size: 2rem;
-    color: #fff;
+    color: var(--dark) f;
+    /* color: #fff; */
     font-weight: 300;
     margin: 0;
     padding: 10px;

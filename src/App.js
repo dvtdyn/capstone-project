@@ -9,6 +9,7 @@ export default function App() {
   const [clubs, setClubs] = useState([])
   useEffect(() => {
     getClubs().then(setClubs)
+    console.log('loading')
   }, [])
 
   return (

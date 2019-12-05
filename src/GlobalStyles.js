@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components/macro'
 export default createGlobalStyle`
 :root{
   font-size: 62.5%;
+  --dark: #494e61;
 }
   *{
     box-sizing: border-box;
@@ -11,6 +12,9 @@ export default createGlobalStyle`
 
   body{
     margin: 0;
-    background: #20243c;
+    /* background: #20243c; */
+    background: var(--dark);
+
   }
+
 `

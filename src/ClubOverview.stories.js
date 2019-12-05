@@ -1,5 +1,5 @@
 import React from 'react'
-import { MemoryRouter, Route, Switch } from 'react-router-dom'
+import { MemoryRouter, Route } from 'react-router-dom'
 
 import ClubOverview from './ClubOverview'
 import websiteIcon from './assets/icons/website.svg'
