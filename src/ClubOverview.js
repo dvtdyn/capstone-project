@@ -9,6 +9,7 @@ import mailIcon from './assets/icons/mail_dark.svg'
 // import websiteIcon from './assets/icons/website.svg'
 import websiteIcon from './assets/icons/website_dark.svg'
 import { useParams } from 'react-router-dom'
+import Team from './Team'
 
 export default function ClubOverview({ clubs }) {
   const { slug } = useParams()
@@ -39,7 +40,7 @@ export default function ClubOverview({ clubs }) {
           </ButtonsWrapper>
         </Wrapper>
         <Wrapper>
-          <h2>Address</h2>
+          <h2>Addresse</h2>
           <p>
             {club.address &&
               `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
@@ -48,11 +49,8 @@ export default function ClubOverview({ clubs }) {
         <Wrapper style={{ borderBottom: 'none' }}>
           <h2>Teams</h2>
           {club.teams &&
-            club.teams.map(({ name, league }) => (
-              <>
-                <h3>{name}</h3>
-                <p>{league}</p>
-              </>
+            club.teams.map(({ teamName, league, _id }) => (
+              <Team key={_id} teamName={teamName} league={league} />
             ))}
         </Wrapper>
       </ClubTextWrapper>
@@ -67,6 +65,8 @@ export default function ClubOverview({ clubs }) {
 const ClubOverviewContainer = styled.div`
   display: grid;
   grid-template-rows: 232px auto;
+  background-color: white;
+  height: 100vh;
 `
 const ClubTextWrapper = styled.div`
   display: grid;
