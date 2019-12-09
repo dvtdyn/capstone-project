@@ -4,6 +4,7 @@ import ClubList from './ClubList'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ClubOverview from './ClubOverview'
 import { getClubs } from './services.js'
+import NewClub from './NewClub'
 
 export default function App() {
   const [clubs, setClubs] = useState([])
@@ -19,6 +20,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <ClubList clubs={clubs} />
+          </Route>
+          <Route exact path="/club/add-new-club">
+            <NewClub />
           </Route>
           <Route path="/club/:slug">
             <ClubOverview clubs={clubs} />
