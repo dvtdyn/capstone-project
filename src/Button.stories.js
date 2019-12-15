@@ -1,15 +1,16 @@
 import React from 'react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import add from './assets/icons/add.svg'
 
-import ButtonAdd from './ButtonAdd.js'
+import Button from './Button.js'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  component: ButtonAdd,
-  title: 'ButtonAdd',
+  component: Button,
+  title: 'Button',
   decorators: [withKnobs],
 }
 
-export const buttonAdd = () => {
-  return <ButtonAdd onClick={action('h')} />
+export const button = () => {
+  return <Button onClick={action('h')} src={add} />
 }

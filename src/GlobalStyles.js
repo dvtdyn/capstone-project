@@ -16,6 +16,7 @@ export default createGlobalStyle`
     /* background: #20243c; */
     background: var(--dark);
 
+
   }
 
 `
