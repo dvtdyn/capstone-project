@@ -1,16 +1,16 @@
 import styled from 'styled-components/macro'
 import React from 'react'
 
-export default function Button({ type, onClick, src }) {
+export default function Button({ name, onClick, src }) {
   return (
     <>
-      <ImgLabel htmlFor={`button${type}`}>
+      <ImgLabel htmlFor={`button${name}`}>
         <img src={src} alt="" />
       </ImgLabel>
       <Input
-        type={`button${type}`}
-        id={`button${type}`}
-        name={`button${type}`}
+        type="button"
+        id={`button${name}`}
+        name={`button${name}`}
         onClick={onClick}
       />
     </>
