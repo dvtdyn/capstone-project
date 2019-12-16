@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 const PORT = process.env.PORT || 3333
 app.listen(PORT, () => console.log(`Express ready on port ${PORT}`))
 
-app.get('/clubs', (req, res) => {
+app.get('/clubs/', (req, res) => {
   Club.find()
     .populate('teams')
     .then(clubs => res.json(clubs))

@@ -1,3 +1,17 @@
 export function getClubs() {
-  return fetch('/clubs').then(res => res.json())
+  return fetchClubs()
+}
+
+export function postClub(data) {
+  return fetchClubs({ method: 'POST', data })
+}
+
+function fetchClubs({ method = 'GET', id = '', data } = {}) {
+  return fetch('/clubs/' + id, {
+    method,
+    body: JSON.stringify(data),
+    headers: {
+      'content-type': 'application/json',
+    },
+  }).then(res => res.json())
 }
