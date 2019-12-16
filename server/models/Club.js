@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const clubSchema = new Schema(
   {
     name: String,
+    image: String,
     slug: String,
     websiteURL: String,
     websiteName: String,

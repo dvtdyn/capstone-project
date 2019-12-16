@@ -3,15 +3,19 @@ import GlobalStyles from './GlobalStyles'
 import ClubList from './ClubList'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ClubOverview from './ClubOverview'
-import { getClubs } from './services.js'
+import { getClubs, postClub } from './services.js'
 import NewClub from './NewClub'
 
 export default function App() {
   const [clubs, setClubs] = useState([])
+  // const [newClub, setNewClub] = useState({})
   useEffect(() => {
     getClubs().then(setClubs)
-    console.log('loading')
   }, [])
+
+  function createNewClub(clubData) {
+    postClub(clubData).then(club => setClubs([...clubs, club]))
+  }
 
   return (
     <>
@@ -22,7 +26,7 @@ export default function App() {
             <ClubList clubs={clubs} />
           </Route>
           <Route exact path="/club/add-new-club">
-            <NewClub />
+            <NewClub onSubmit={createNewClub} />
           </Route>
           <Route path="/club/:slug">
             <ClubOverview clubs={clubs} />

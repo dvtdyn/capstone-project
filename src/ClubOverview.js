@@ -13,6 +13,7 @@ import Team from './Team'
 
 export default function ClubOverview({ clubs }) {
   const { slug } = useParams()
+  console.log(getClubFromSlug(slug))
   const club = getClubFromSlug(slug) || {}
   return (
     <ClubOverviewContainer>
@@ -40,7 +41,7 @@ export default function ClubOverview({ clubs }) {
           </ButtonsWrapper>
         </Wrapper>
         <Wrapper>
-          <h2>Addresse</h2>
+          <h2>Adresse</h2>
           <p>
             {club.address &&
               `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
@@ -58,7 +59,9 @@ export default function ClubOverview({ clubs }) {
   )
 
   function getClubFromSlug(slug) {
-    return clubs.find(club => club.slug.toLowerCase() === slug)
+    const club = clubs.find(club => club.slug === slug)
+    console.log(club)
+    return club
   }
 }
 
@@ -72,6 +75,7 @@ const ClubTextWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: 90px 80px auto;
+  padding: 0 10px;
   border-radius: 40px 40px 0 0;
   background: white;
 
@@ -86,7 +90,6 @@ const ClubTextWrapper = styled.div`
     position: absolute;
     background: url(${props => props.logo}) no-repeat center center;
     opacity: 0.05;
-
     filter: grayscale(1);
     background-size: contain;
   }
@@ -99,6 +102,7 @@ const ClubImage = styled.img`
 `
 const Wrapper = styled.section`
   display: grid;
+  z-index: 1;
   align-content: flex-start;
   padding: 10px 10px 0 10px;
   border-bottom: solid 1px #31354b;

@@ -5,28 +5,30 @@ import Button from './Button.js'
 import add from './assets/icons/add.svg'
 import remove from './assets/icons/remove.svg'
 import axios from 'axios'
+import NewClubInput from './NewClubInput'
+import TeamInput from './TeamInput'
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET
 
-export default function NewClub() {
+export default function NewClub({ onSubmit }) {
   const blankTeam = { teamName: '', league: '' }
-  const [teams, setTeamsState] = useState([{ ...blankTeam }])
+  const [teams, setTeams] = useState([{ ...blankTeam }])
   const teamNameRef = useRef()
 
   const addTeam = () => {
-    setTeamsState([...teams, { ...blankTeam }])
+    setTeams([...teams, { ...blankTeam }])
   }
 
   const removeTeam = () => {
-    setTeamsState(teams.splice(0, teams.length - 1))
+    setTeams(teams.splice(0, teams.length - 1))
   }
 
   useEffect(() => {
     if (teams.length > 1) {
       teamNameRef.current && teamNameRef.current.focus()
     }
-  }, [teams])
+  }, [teams.length])
 
   const [image, setImage] = useState('')
   const [logo, setLogo] = useState('')
@@ -34,6 +36,7 @@ export default function NewClub() {
     imageLoading: false,
     logoLoading: false,
   })
+
   function upload(event) {
     const url = `https://api.cloudinary.com/v1_1/${CLOUDNAME}/upload`
 
@@ -74,12 +77,40 @@ export default function NewClub() {
     const form = event.target
     const formData = new FormData(form)
     const data = Object.fromEntries(formData)
+    const {
+      city,
+      clubName,
+      houseNumber,
+      mail,
+      phone,
+      street,
+      website,
+      zip,
+    } = data
+
     const dbData = {
-      ...data,
-      clubImage: image,
-      logo: logo,
+      name: clubName,
+      slug: clubName,
+      address: {
+        city,
+        houseNumber,
+        zip,
+        street,
+      },
+      image,
+      logo,
+      mail,
+      phoneNumber: phone,
+      websiteURL: website,
+      teams,
     }
-    console.log(dbData)
+    onSubmit(dbData)
+  }
+  function handleTeamChange(event) {
+    const updatedTeams = [...teams]
+    updatedTeams[event.target.dataset.index][event.target.dataset.name] =
+      event.target.value
+    setTeams(updatedTeams)
   }
 
   return (
@@ -159,21 +190,15 @@ export default function NewClub() {
         <FormHeader>Teams</FormHeader>
         <Button name="Add" src={add} onClick={addTeam} />
         <Button name="Remove" src={remove} onClick={removeTeam} />
-        {teams.map((val, index) => {
-          const teamNameID = `teamName${index}`
-          const leagueID = `league${index}`
-          return (
-            <TeamsContentWrapper key={teamNameID}>
-              <NewClubInput
-                type="text"
-                name={teamNameID}
-                ref={teams.length - 1 === index ? teamNameRef : null}
-                placeholder="Teamname"
-              />
-              <NewClubInput type="text" name={leagueID} placeholder="Liga" />
-            </TeamsContentWrapper>
-          )
-        })}
+        {teams.map((val, index) => (
+          <TeamInput
+            key={`teamName${index}`}
+            index={index}
+            reference={teams.length - 1 === index ? teamNameRef : null}
+            teams={teams}
+            onChange={handleTeamChange}
+          />
+        ))}
       </div>
       <NewClubInput type="submit" value="Submit" />
     </NewClubForm>
@@ -256,46 +281,4 @@ const ZipCityWrapper = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 60px auto;
-`
-
-const TeamsContentWrapper = styled.div`
-  display: grid;
-  gap: 20px;
-  padding-left: 8px;
-  grid-template-columns: auto 120px;
-`
-const NewClubInput = styled.input`
-  background-color: transparent;
-  color: white;
-  padding: 8px 8px 8px 0;
-  font-size: 1.6rem;
-  height: 40px;
-  outline: none;
-  display: block;
-  border: none;
-  border-bottom: 1px solid white;
-  &[type='file'] {
-    display: none;
-  }
-
-  &[type='submit'] {
-    display: block;
-    background: white;
-    color: var(--dark);
-    border-radius: 12px;
-    margin: 0 auto;
-
-    padding: 8px 20px;
-    font-size: 2rem;
-    height: 100%;
-  }
-
-  &::placeholder {
-    font-size: 1.6rem;
-    color: whitesmoke;
-  }
-
-  &:focus {
-    border-color: lightsalmon;
-  }
 `
