@@ -1,5 +1,5 @@
 import React from 'react'
-import Club from './Club.js'
+import Club from './clubs/Club.js/index.js'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 export default {

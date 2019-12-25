@@ -1,9 +1,8 @@
 import React from 'react'
-
 import styled from 'styled-components/macro'
 import Club from './Club'
 import { Link } from 'react-router-dom'
-import add from './assets/icons/add.svg'
+import add from '../assets/icons/add.svg'
 
 export default function ClubList({ clubs }) {
   return (
