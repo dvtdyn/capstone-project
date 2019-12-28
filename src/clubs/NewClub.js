@@ -7,11 +7,13 @@ import remove from '../assets/icons/remove.svg'
 import axios from 'axios'
 import NewClubInput from './NewClubInput'
 import TeamInput from './TeamInput'
+import { useHistory } from 'react-router-dom'
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET
 
 export default function NewClub({ onSubmit }) {
+  const history = useHistory()
   const blankTeam = { teamName: '', league: '' }
   const [teams, setTeams] = useState([{ ...blankTeam }])
   const teamNameRef = useRef()
@@ -105,6 +107,7 @@ export default function NewClub({ onSubmit }) {
       teams,
     }
     onSubmit(dbData)
+    history.push('/club/preview')
   }
   function handleTeamChange(event) {
     const updatedTeams = [...teams]
@@ -173,7 +176,7 @@ export default function NewClub({ onSubmit }) {
         <FormHeader>Verein</FormHeader>
         <ClubWrapper>
           <NewClubInput type="text" name="clubName" placeholder="Vereinsname" />
-          <NewClubInput type="text" name="phone" placeholder="Telefon" />
+          <NewClubInput type="text" name="phoneNumber" placeholder="Telefon" />
           <NewClubInput type="text" name="mail" placeholder="E-Mail" />
           <NewClubInput type="text" name="website" placeholder="Website" />
           <StreetNrWrapper>

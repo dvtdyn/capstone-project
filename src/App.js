@@ -8,13 +8,17 @@ import NewClub from './clubs/NewClub'
 
 export default function App() {
   const [clubs, setClubs] = useState([])
-  // const [newClub, setNewClub] = useState({})
+  const [newClub, setNewClub] = useState({})
   useEffect(() => {
     getClubs().then(setClubs)
   }, [])
 
   function createNewClub(clubData) {
     postClub(clubData).then(club => setClubs([...clubs, club]))
+  }
+
+  function handleOnSubmit(clubData) {
+    setNewClub(clubData)
   }
 
   return (
@@ -26,7 +30,10 @@ export default function App() {
             <ClubList clubs={clubs} />
           </Route>
           <Route exact path="/club/add-new-club">
-            <NewClub onSubmit={createNewClub} />
+            <NewClub onSubmit={handleOnSubmit} />
+          </Route>
+          <Route path="/club/preview">
+            <ClubOverview clubs={newClub} />
           </Route>
           <Route path="/club/:slug">
             <ClubOverview clubs={clubs} />

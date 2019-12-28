@@ -10,8 +10,7 @@ import Team from './Team'
 
 export default function ClubOverview({ clubs }) {
   const { slug } = useParams()
-  console.log(getClubFromSlug(slug))
-  const club = getClubFromSlug(slug) || {}
+  const club = slug ? getClubFromSlug(slug) || {} : clubs
   return (
     <ClubOverviewContainer>
       <ClubImage src={etvImage} />
