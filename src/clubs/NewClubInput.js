@@ -46,15 +46,10 @@ const Input = styled.input`
   }
 
   &[type='submit'] {
-    display: block;
-    background: white;
-    color: var(--dark);
-    border-radius: 12px;
-    margin: 0 auto;
-
-    padding: 8px 20px;
-    font-size: 2rem;
-    height: 100%;
+    display: none;
+  }
+  &[type='button'] {
+    display: none;
   }
 
   &::placeholder {
