@@ -1,86 +1,126 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import etvImage from '../assets/images/ETV.jpg'
 import ClubButton from './ClubButton'
 import phoneIcon from '../assets/icons/phone_dark.svg'
 import mailIcon from '../assets/icons/mail_dark.svg'
 import websiteIcon from '../assets/icons/website_dark.svg'
-import { useParams } from 'react-router-dom'
+import leftArrowLight from '../assets/icons/left-arrow-light.svg'
+import verifiedLight from '../assets/icons/verified-light.svg'
+import { useParams, useHistory } from 'react-router-dom'
 import Team from './Team'
 
-export default function ClubOverview({ clubs }) {
+export default function ClubOverview({ clubs, onSubmit }) {
+  const history = useHistory()
   const { slug } = useParams()
   const club = slug ? getClubFromSlug(slug) || {} : clubs
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    onSubmit()
+    history.push('/')
+  }
   return (
-    <ClubOverviewContainer>
-      <ClubImage src={etvImage} />
-      <ClubTextWrapper logo={club.logo}>
-        <Wrapper>
-          <h1>{club.name && club.name.toUpperCase()}</h1>
-          <ButtonsWrapper>
-            <ClubButton
-              href={'tel:' + club.phoneNumber}
-              src={phoneIcon}
-              alt="Phone"
-            />
-            <ClubButton
-              href={'mailto:' + club.mail}
-              src={mailIcon}
-              alt="Mail"
-            />
-            <ClubButton
-              href={club.websiteURL}
-              src={websiteIcon}
-              alt="Website"
-              target="_blank"
-            />
-          </ButtonsWrapper>
-        </Wrapper>
-        <Wrapper>
-          <h2>Adresse</h2>
-          <p>
-            {club.address &&
-              `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
-          </p>
-        </Wrapper>
-        <Wrapper style={{ borderBottom: 'none' }}>
-          <h2>Teams</h2>
-          {club.teams &&
-            club.teams.map(({ teamName, league, _id }) => (
-              <Team key={_id} teamName={teamName} league={league} />
-            ))}
-        </Wrapper>
-      </ClubTextWrapper>
-    </ClubOverviewContainer>
+    <Grid style={slug ? { gridTemplateRows: 'auto' } : { display: 'grid' }}>
+      <ClubOverviewContainer>
+        <ClubImage src={club.image} />
+        <ClubTextWrapper logo={club.logo}>
+          <Wrapper>
+            <h1>{club.name && club.name.toUpperCase()}</h1>
+            <ButtonsWrapper>
+              <ClubButton
+                href={'tel:' + club.phoneNumber}
+                src={phoneIcon}
+                alt="Phone"
+              />
+              <ClubButton
+                href={'mailto:' + club.mail}
+                src={mailIcon}
+                alt="Mail"
+              />
+              <ClubButton
+                href={club.websiteURL}
+                src={websiteIcon}
+                alt="Website"
+                target="_blank"
+              />
+            </ButtonsWrapper>
+          </Wrapper>
+          <Wrapper>
+            <h2>Adresse</h2>
+            <p>
+              {club.address &&
+                `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
+            </p>
+          </Wrapper>
+          <Wrapper style={{ borderBottom: 'none' }}>
+            <h2>Teams</h2>
+            {club.teams &&
+              club.teams.map(({ teamName, league, _id }, index) => (
+                <Team
+                  key={_id ? _id : index}
+                  teamName={teamName}
+                  league={league}
+                />
+              ))}
+          </Wrapper>
+        </ClubTextWrapper>
+      </ClubOverviewContainer>
+      <ButtonsWrapper style={slug ? { display: 'none' } : { display: 'grid' }}>
+        <ImgLabel htmlFor="buttonBack">
+          <img src={leftArrowLight} alt="" />
+        </ImgLabel>
+        <Input
+          type="button"
+          id="buttonBack"
+          name="buttonBack"
+          onClick={() => window.history.back()}
+        />
+        <ImgLabel htmlFor="buttonSubmit">
+          <img src={verifiedLight} alt="" />
+        </ImgLabel>
+        <Input
+          type="button"
+          id="buttonSubmit"
+          name="buttonSubmit"
+          onClick={handleSubmit}
+        />
+      </ButtonsWrapper>
+    </Grid>
   )
 
   function getClubFromSlug(slug) {
     const club = clubs.find(club => club.slug === slug)
-    console.log(club)
     return club
   }
 }
-
+const Grid = styled.div`
+  display: grid;
+  grid-template-rows: auto 50px;
+  height: 100vh;
+  background: white;
+`
 const ClubOverviewContainer = styled.div`
   display: grid;
   grid-template-rows: 232px auto;
-  background-color: white;
-  height: 100vh;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
 const ClubTextWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: 90px 80px auto;
-  padding: 0 10px;
+  padding: 10px;
   border-radius: 40px 40px 0 0;
   background: white;
 
   &:after {
     content: '';
     justify-self: center;
-    max-height: 397px;
+    max-height: 380px;
     max-width: 345px;
-    top: 24px;
+    top: 10px;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -107,7 +147,6 @@ const Wrapper = styled.section`
     margin: 0;
     font-weight: 300;
     color: var(--dark);
-    /* color: #fff; */
     font-size: 2.4rem;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -159,6 +198,27 @@ const Wrapper = styled.section`
 `
 
 const ButtonsWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: space-between;
+  height: 50px;
+`
+
+const ImgLabel = styled.label`
+  /* display: flex;
+  justify-content: center; */
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: var(--dark);
+  border-radius: 16px;
+  margin: 0 20px;
+
+  img {
+    height: 100%;
+  }
+`
+
+const Input = styled.input`
+  display: none;
 `

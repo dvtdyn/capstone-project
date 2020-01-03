@@ -13,12 +13,27 @@ export default function App() {
     getClubs().then(setClubs)
   }, [])
 
-  function createNewClub(clubData) {
-    postClub(clubData).then(club => setClubs([...clubs, club]))
+  useEffect(() => {
+    const newClubData = JSON.parse(localStorage.getItem('newClub'))
+
+    if (newClubData) {
+      setNewClub({ ...newClubData })
+    } else {
+      setNewClub(newClub => newClub)
+    }
+  }, [])
+  function createNewClub() {
+    postClub(newClub).then(club => setClubs([...clubs, club]))
+    localStorage.clear()
   }
 
   function handleOnSubmit(clubData) {
     setNewClub(clubData)
+  }
+
+  function handleBackClick() {
+    localStorage.clear()
+    window.history.back()
   }
 
   return (
@@ -30,10 +45,10 @@ export default function App() {
             <ClubList clubs={clubs} />
           </Route>
           <Route exact path="/club/add-new-club">
-            <NewClub onSubmit={handleOnSubmit} />
+            <NewClub onSubmit={handleOnSubmit} onBackClick={handleBackClick} />
           </Route>
           <Route path="/club/preview">
-            <ClubOverview clubs={newClub} />
+            <ClubOverview clubs={newClub} onSubmit={createNewClub} />
           </Route>
           <Route path="/club/:slug">
             <ClubOverview clubs={clubs} />
