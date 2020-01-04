@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import Fuse from 'fuse.js'
 import styled from 'styled-components/macro'
 import Club from './Club'
 import { Link } from 'react-router-dom'
@@ -10,19 +11,34 @@ import { useSpring, animated } from 'react-spring'
 export default function ClubList({ clubs }) {
   const [toggle, setToggle] = useState(true)
   const searchInputRef = useRef()
+  const [searchInput, setSearchInput] = useState('')
   function onSearchButtonClick() {
     setToggle(!toggle)
     searchInputRef.current.focus()
   }
+
   const animateForm = useSpring({
     width: toggle ? '0%' : '100%',
-    display: toggle ? 'none' : 'flex',
   })
   const animateButton = useSpring({
     width: !toggle ? '0%' : '100%',
     height: !toggle ? '50px' : '60px',
   })
 
+  const options = {
+    shouldSort: true,
+    threshold: 0.4,
+    location: 0,
+    distance: 50,
+    maxPatternLength: 12,
+    minMatchCharLength: 3,
+    keys: ['name', 'teams.teamName', 'teams.league'],
+  }
+  function onInput(event) {
+    setSearchInput(event.target.value)
+  }
+  const fuse = new Fuse(clubs, options)
+  const result = searchInput ? fuse.search(searchInput) : clubs
   return (
     <Grid>
       <Header>
@@ -48,11 +64,12 @@ export default function ClubList({ clubs }) {
           <SearchInput
             ref={searchInputRef}
             placeholder="Suchen..."
+            onInput={onInput}
           ></SearchInput>
         </SearchForm>
       </Header>
       <ClubListContainer>
-        {clubs
+        {result
           .sort((a, b) => a.name.localeCompare(b.name))
           .map(({ logo, name, websiteURL, _id, phoneNumber, mail, slug }) => (
             <Club
