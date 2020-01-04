@@ -127,142 +127,149 @@ export default function NewClub({ onSubmit, onBackClick }) {
 
   return (
     <NewClubForm onSubmit={handleSubmit}>
-      <h1>DEIN VEREIN !</h1>
-      <UploadWrapper>
-        <UploadLabel
-          className={newClub.image ? 'uploaded' : ''}
-          htmlFor="clubImage"
-        >
-          <UploadHeader
-            style={
-              loading.imageLoading || newClub.image
-                ? { display: 'none' }
-                : { display: 'block' }
-            }
+      <InputContainer>
+        <h1>DEIN VEREIN !</h1>
+        <UploadWrapper>
+          <UploadLabel
+            className={newClub.image ? 'uploaded' : ''}
+            htmlFor="clubImage"
           >
-            Vereinsfoto
-          </UploadHeader>
-          {loading.imageLoading ? (
-            <UploadHeader>Loading...</UploadHeader>
-          ) : (
-            <img
-              src={newClub.image ? newClub.image : uploadImg}
-              className={newClub.image ? 'uploadedImg' : ''}
-              alt=""
-            />
-          )}
-        </UploadLabel>
+            <UploadHeader
+              style={
+                loading.imageLoading || newClub.image
+                  ? { display: 'none' }
+                  : { display: 'block' }
+              }
+            >
+              Vereinsfoto
+            </UploadHeader>
+            {loading.imageLoading ? (
+              <UploadHeader>Loading...</UploadHeader>
+            ) : (
+              <img
+                src={newClub.image ? newClub.image : uploadImg}
+                className={newClub.image ? 'uploadedImg' : ''}
+                alt=""
+              />
+            )}
+          </UploadLabel>
 
-        <NewClubInput
-          type="file"
-          id="clubImage"
-          accept="image/*"
-          name="clubImage"
-          onChange={upload}
-        />
-        <UploadLabel htmlFor="logo" className={newClub.logo ? 'uploaded' : ''}>
-          <UploadHeader
-            style={
-              loading.logoLoading || newClub.logo
-                ? { display: 'none' }
-                : { display: 'block' }
-            }
+          <NewClubInput
+            type="file"
+            id="clubImage"
+            accept="image/*"
+            name="clubImage"
+            onChange={upload}
+          />
+          <UploadLabel
+            htmlFor="logo"
+            className={newClub.logo ? 'uploaded' : ''}
           >
-            Logo
-          </UploadHeader>
-          {loading.logoLoading ? (
-            <UploadHeader>Loading...</UploadHeader>
-          ) : (
-            <img src={newClub.logo ? newClub.logo : uploadImg} alt="" />
-          )}
-        </UploadLabel>
-        <NewClubInput
-          type="file"
-          id="logo"
-          accept="image/*"
-          name="logo"
-          onChange={upload}
-        />
-      </UploadWrapper>
-      <div>
-        <FormHeader>Verein</FormHeader>
-        <ClubWrapper>
+            <UploadHeader
+              style={
+                loading.logoLoading || newClub.logo
+                  ? { display: 'none' }
+                  : { display: 'block' }
+              }
+            >
+              Logo
+            </UploadHeader>
+            {loading.logoLoading ? (
+              <UploadHeader>Loading...</UploadHeader>
+            ) : (
+              <img src={newClub.logo ? newClub.logo : uploadImg} alt="" />
+            )}
+          </UploadLabel>
           <NewClubInput
-            type="text"
-            name="name"
-            placeholder="Vereinsname"
-            onChange={handleChange}
-            value={newClub.name}
+            type="file"
+            id="logo"
+            accept="image/*"
+            name="logo"
+            onChange={upload}
           />
-          <NewClubInput
-            type="text"
-            name="phoneNumber"
-            placeholder="Telefon"
-            onChange={handleChange}
-            value={newClub.phoneNumber}
-          />
-          <NewClubInput
-            type="text"
-            name="mail"
-            placeholder="E-Mail"
-            onChange={handleChange}
-            value={newClub.mail}
-          />
-          <NewClubInput
-            type="text"
-            name="websiteURL"
-            placeholder="Website"
-            onChange={handleChange}
-            value={newClub.websiteURL}
-          />
-          <StreetNrWrapper>
+        </UploadWrapper>
+        <div>
+          <FormHeader>Verein</FormHeader>
+          <ClubWrapper>
             <NewClubInput
               type="text"
-              name="street"
-              placeholder="Straße"
-              onChange={handleAddressChange}
-              value={newClub.address.street}
+              name="name"
+              placeholder="Vereinsname"
+              onChange={handleChange}
+              value={newClub.name}
             />
             <NewClubInput
               type="text"
-              name="houseNumber"
-              placeholder="Nr."
-              onChange={handleAddressChange}
-              value={newClub.address.houseNumber}
-            />
-          </StreetNrWrapper>
-          <ZipCityWrapper>
-            <NewClubInput
-              type="text"
-              name="zip"
-              placeholder="PLZ"
-              onChange={handleAddressChange}
-              value={newClub.address.zip}
+              name="phoneNumber"
+              placeholder="Telefon"
+              onChange={handleChange}
+              value={newClub.phoneNumber}
             />
             <NewClubInput
               type="text"
-              name="city"
-              placeholder="Stadt"
-              onChange={handleAddressChange}
-              value={newClub.address.city}
+              name="mail"
+              placeholder="E-Mail"
+              onChange={handleChange}
+              value={newClub.mail}
             />
-          </ZipCityWrapper>
-        </ClubWrapper>
-      </div>
-      <div>
-        <FormHeader>Teams</FormHeader>
-        <Button name="Add" src={add} onClick={addTeam} />
-        <Button name="Remove" src={remove} onClick={removeTeam} />
-        {newClub.teams.map((val, index) => (
-          <TeamInput
-            key={`teamName${index}`}
-            index={index}
-            reference={newClub.teams.length - 1 === index ? teamNameRef : null}
-            teams={newClub.teams}
-            onChange={handleTeamChange}
-          />
-        ))}
-      </div>
+            <NewClubInput
+              type="text"
+              name="websiteURL"
+              placeholder="Website"
+              onChange={handleChange}
+              value={newClub.websiteURL}
+            />
+            <StreetNrWrapper>
+              <NewClubInput
+                type="text"
+                name="street"
+                placeholder="Straße"
+                onChange={handleAddressChange}
+                value={newClub.address.street}
+              />
+              <NewClubInput
+                type="text"
+                name="houseNumber"
+                placeholder="Nr."
+                onChange={handleAddressChange}
+                value={newClub.address.houseNumber}
+              />
+            </StreetNrWrapper>
+            <ZipCityWrapper>
+              <NewClubInput
+                type="text"
+                name="zip"
+                placeholder="PLZ"
+                onChange={handleAddressChange}
+                value={newClub.address.zip}
+              />
+              <NewClubInput
+                type="text"
+                name="city"
+                placeholder="Stadt"
+                onChange={handleAddressChange}
+                value={newClub.address.city}
+              />
+            </ZipCityWrapper>
+          </ClubWrapper>
+        </div>
+        <div>
+          <FormHeader>Teams</FormHeader>
+          <Button name="Add" src={add} onClick={addTeam} />
+          <Button name="Remove" src={remove} onClick={removeTeam} />
+          {newClub.teams.map((val, index) => (
+            <TeamInput
+              key={`teamName${index}`}
+              index={index}
+              reference={
+                newClub.teams.length - 1 === index ? teamNameRef : null
+              }
+              teams={newClub.teams}
+              onChange={handleTeamChange}
+            />
+          ))}
+        </div>
+      </InputContainer>
       <ButtonsWrapper>
         <ButtonLabel htmlFor="buttonBack" onClick={onBackClick}>
           <img src={leftArrow} alt="" />
@@ -279,8 +286,17 @@ export default function NewClub({ onSubmit, onBackClick }) {
 
 const NewClubForm = styled.form`
   display: grid;
+  grid-template-rows: auto 60px;
+  height: 100vh;
   gap: 10px;
+  background: var(--dark);
   padding: 10px 20px;
+`
+
+const InputContainer = styled.div`
+  display: grid;
+  gap: 10px;
+  overflow: scroll;
   h1 {
     justify-self: center;
     margin: 0;

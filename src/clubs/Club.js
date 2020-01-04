@@ -44,16 +44,13 @@ const ClubBody = styled.section`
   height: 100px;
   grid-template-columns: 85px auto;
   align-content: center;
-  border-radius: 8px;
-  background-color: #fff;
-  /* background-color: #494e61; */
-
   text-decoration: none;
 `
 const LinkWrapper = styled(Link)`
   width: 85px;
   padding: 10px 0 10px 10px;
   text-align: center;
+  cursor: default;
 `
 
 const Logo = styled.img`
@@ -70,17 +67,17 @@ const ClubName = styled(Link)`
   margin: 0;
   font-weight: 300;
   color: #494e61;
-  /* color: #fff; */
-
   font-size: 2.4rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   padding: 10px 5px 0 10px;
   text-decoration: none;
+  cursor: default;
 `
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 5px;
+  border-bottom: 1px solid #bdc2d5;
 `
