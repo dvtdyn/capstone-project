@@ -15,4 +15,5 @@ const ButtonContainer = styled.a`
   width: 50px;
   height: 50px;
   text-decoration: none;
+  cursor: default;
 `
