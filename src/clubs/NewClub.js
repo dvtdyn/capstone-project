@@ -30,6 +30,10 @@ export default function NewClub({ onSubmit, onBackClick }) {
       houseNumber: '',
       zip: '',
       street: '',
+      location: {
+        lat: '',
+        lng: '',
+      },
     },
     image: '',
     logo: '',
@@ -61,7 +65,6 @@ export default function NewClub({ onSubmit, onBackClick }) {
 
   useEffect(() => {
     const newClubData = JSON.parse(localStorage.getItem('newClub'))
-
     if (newClubData) {
       setNewClub({ ...newClubData })
     } else {
@@ -106,9 +109,37 @@ export default function NewClub({ onSubmit, onBackClick }) {
       setLoading({ logoLoading: false })
     }
   }
+  function geocode() {
+    const MAPSKEY = process.env.REACT_APP_MAPS_KEY
+    const location = `${newClub.address.street} ${newClub.address.houseNumber}, ${newClub.address.zip} ${newClub.address.city}`
+    /* `${newClub.address.street} ${newClub.address.houseNumber}, ${newClub.address.zip} ${newClub.address.city}` */
+    axios
+      .get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: location,
+          key: MAPSKEY,
+        },
+      })
+      .then(function(response) {
+        setNewClub({
+          ...newClub,
+          address: {
+            ...newClub.address,
+            location: response.data.results[0].geometry.location,
+          },
+        })
+        console.log(response.data.results[0].geometry.location)
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
+  }
+  // address=1600+Amphitheatre+Parkway,
+  //     +Mountain+View,+CA&key=YOUR_API_KEY
 
   function handleSubmit(event) {
     event.preventDefault()
+    geocode()
     onSubmit(newClub)
     history.push('/club/preview')
   }
