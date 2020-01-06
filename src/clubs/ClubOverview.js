@@ -19,13 +19,19 @@ export default function ClubOverview({ clubs, onSubmit, onBackClick }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    onSubmit()
+    onSubmit(clubs)
     history.push('/')
   }
 
   return (
     <Grid style={slug ? { gridTemplateRows: 'auto' } : { display: 'grid' }}>
-      <CloseWrapper onClick={onBackClick}>
+      <CloseWrapper
+        onClick={onBackClick}
+        style={{
+          display:
+            window.location.pathname === '/club/preview' ? 'none' : 'block',
+        }}
+      >
         <Close src={closeIcon} />
       </CloseWrapper>
       <ClubOverviewContainer>

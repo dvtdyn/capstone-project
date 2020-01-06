@@ -9,11 +9,11 @@ import NewClub from './clubs/NewClub'
 export default function App() {
   const [clubs, setClubs] = useState([])
   const [newClub, setNewClub] = useState({})
-  useEffect(() => {
-    getClubs().then(res => setClubs(res))
-  }, [])
+  // useEffect(() => {
+  // }, [])
 
   useEffect(() => {
+    getClubs().then(res => setClubs(res))
     const newClubData = JSON.parse(localStorage.getItem('newClub'))
 
     if (newClubData) {
@@ -22,17 +22,18 @@ export default function App() {
       setNewClub(newClub => newClub)
     }
   }, [])
-  function createNewClub() {
-    postClub(newClub)
-      .then(club => {
-        setClubs([...clubs, club])
-      })
-      .then(getClubs().then(res => setClubs(res)))
+  function createNewClub(clubsData) {
+    setClubs([...clubs, clubsData])
+    postClub(clubsData).then(club => {
+      setClubs([...clubs, club])
+      getClubs().then(res => setClubs(res))
+    })
     localStorage.clear()
   }
 
   function handleOnSubmit(clubData) {
     setNewClub(clubData)
+
     window.location = '/club/preview'
   }
 
