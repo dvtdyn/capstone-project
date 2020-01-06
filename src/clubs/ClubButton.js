@@ -12,8 +12,14 @@ export default function ClubButton({ href, src, alt, target = '_self' }) {
 const ButtonContainer = styled.a`
   display: flex;
   justify-content: center;
+  padding: 12px;
   width: 50px;
   height: 50px;
   text-decoration: none;
   cursor: default;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 `

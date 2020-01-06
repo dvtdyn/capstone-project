@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
-import uploadImg from '../assets/icons/cloud-computing.svg'
+import uploadImg from '../assets/icons/cloud-computing-dark.svg'
 import Button from './Button.js'
-import add from '../assets/icons/add.svg'
-import remove from '../assets/icons/remove.svg'
-import rightArrow from '../assets/icons/right-arrow.svg'
-import leftArrow from '../assets/icons/left-arrow.svg'
+import add from '../assets/icons/add-dark.svg'
+import remove from '../assets/icons/remove-dark.svg'
+import rightArrow from '../assets/icons/right-arrow-light.svg'
+import leftArrow from '../assets/icons/left-arrow-light.svg'
 import axios from 'axios'
 import NewClubInput from './NewClubInput'
 import TeamInput from './TeamInput'
@@ -329,7 +329,6 @@ const NewClubForm = styled.form`
   grid-template-rows: auto 60px;
   height: 100vh;
   gap: 10px;
-  background: var(--dark);
   padding: 10px 20px;
 `
 
@@ -340,7 +339,7 @@ const InputContainer = styled.div`
   h1 {
     justify-self: center;
     margin: 0;
-    color: white;
+    color: var(--dark);
     font-size: 2.8rem;
   }
 `
@@ -355,12 +354,11 @@ const UploadLabel = styled.label`
   justify-items: center;
   height: 100px;
   width: 100%;
-  border: solid 1px white;
+  border: solid 1px var(--dark);
   border-radius: 20px;
   padding: 15px 10px;
   overflow: hidden;
   &.uploaded {
-    background: white;
     padding: 0;
     grid-template-rows: auto;
     border: none;
@@ -378,7 +376,7 @@ const UploadLabel = styled.label`
 
 const UploadHeader = styled.h2`
   font-size: 1.6rem;
-  color: white;
+  color: var(--dark);
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -388,7 +386,7 @@ const UploadHeader = styled.h2`
 const FormHeader = styled.h2`
   font-size: 2.4rem;
   display: inline-block;
-  color: white;
+  color: var(--dark);
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -419,7 +417,7 @@ const ButtonsWrapper = styled.div`
 `
 const ButtonLabel = styled.label`
   border-radius: 16px;
-  background: white;
+  background: var(--dark);
   width: 50px;
   height: 50px;
   padding: 5px;

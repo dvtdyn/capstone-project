@@ -10,7 +10,7 @@ export default function App() {
   const [clubs, setClubs] = useState([])
   const [newClub, setNewClub] = useState({})
   useEffect(() => {
-    getClubs().then(setClubs)
+    getClubs().then(res => setClubs(res))
   }, [])
 
   useEffect(() => {
@@ -23,7 +23,11 @@ export default function App() {
     }
   }, [])
   function createNewClub() {
-    postClub(newClub).then(club => setClubs([...clubs, club]))
+    postClub(newClub)
+      .then(club => {
+        setClubs([...clubs, club])
+      })
+      .then(getClubs().then(res => setClubs(res)))
     localStorage.clear()
   }
 
@@ -48,15 +52,19 @@ export default function App() {
           <Route exact path="/clubs/map">
             <ClubList clubs={clubs} />
           </Route>
+          <Route exact path="/player">
+            <ClubList clubs={clubs} />
+          </Route>
 
           <Route exact path="/club/add-new-club">
             <NewClub onSubmit={handleOnSubmit} onBackClick={handleBackClick} />
           </Route>
+
           <Route path="/club/preview">
             <ClubOverview clubs={newClub} onSubmit={createNewClub} />
           </Route>
           <Route path="/club/:slug">
-            <ClubOverview clubs={clubs} />
+            <ClubOverview clubs={clubs} onBackClick={handleBackClick} />
           </Route>
         </Switch>
       </Router>

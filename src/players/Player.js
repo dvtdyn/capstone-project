@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import websiteIcon from '../assets/icons/website_dark.svg'
+import insta from '../assets/icons/insta.svg'
+import facebook from '../assets/icons/facebook.svg'
 import phoneIcon from '../assets/icons/phone_dark.svg'
 import mailIcon from '../assets/icons/mail_dark.svg'
-import ClubButton from './ClubButton'
+import ClubButton from '../clubs/ClubButton'
 import { Link } from 'react-router-dom'
 
 export default function Club({
@@ -27,8 +28,16 @@ export default function Club({
           <ClubButton href={'tel:' + phoneNumber} src={phoneIcon} alt="Phone" />
           <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
           <ClubButton
+            style={{ padding: '10px' }}
             href={websiteURL}
-            src={websiteIcon}
+            src={insta}
+            alt="Website"
+            target="_blank"
+          />
+          <ClubButton
+            style={{ padding: '10px' }}
+            href={websiteURL}
+            src={facebook}
             alt="Website"
             target="_blank"
           />
@@ -42,25 +51,30 @@ const ClubBody = styled.section`
   display: grid;
   grid-auto-flow: column;
   height: 100px;
-  grid-template-columns: 85px auto;
+  grid-template-columns: auto 1fr;
   align-content: center;
   text-decoration: none;
 `
 const LinkWrapper = styled(Link)`
-  width: 85px;
-  padding: 10px 0 10px 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  margin: 10px 0 10px 10px;
   text-align: center;
+  overflow: hidden;
   cursor: default;
 `
 
 const Logo = styled.img`
-  max-height: 75px;
-  max-width: 75px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 `
 
 const ClubTextWrapper = styled.div`
   height: 100px;
   display: grid;
+  padding-left: 5px;
 `
 
 const ClubName = styled(Link)`
