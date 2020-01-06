@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom'
 import addLight from '../assets/icons/add-light.svg'
 import searchIcon from '../assets/icons/search-icon.svg'
 import leftArrow from '../assets/icons/left-arrow.svg'
+import logo from '../assets/icons/logo.svg'
 import { useSpring, animated } from 'react-spring'
 import MapContainer from './MapContainer'
+import player from '../player.json'
+import Player from '../players/Player.js'
 
 export default function ClubList({ clubs }) {
   const [toggle, setToggle] = useState(true)
@@ -54,18 +57,25 @@ export default function ClubList({ clubs }) {
   }
   const fuse = new Fuse(clubs, options)
   const result = searchInput ? fuse.search(searchInput) : clubs
-
   return (
     <Grid>
       <Header style={animateHeader}>
         <HeaderRow>
           <ButtonWrapper style={animateButton}>
-            <Button to={window.location.pathname} onClick={onSearchButtonClick}>
-              <img src={searchIcon} alt="" />
-            </Button>
-            <Button to="/club/add-new-club">
-              <img src={addLight} alt="" />
-            </Button>
+            <LogoWrapper>
+              <img src={logo} alt="" />
+            </LogoWrapper>
+            <ButtonsWrapper>
+              <Button
+                to={window.location.pathname}
+                onClick={onSearchButtonClick}
+              >
+                <img src={searchIcon} alt="" />
+              </Button>
+              <Button to="/club/add-new-club">
+                <img src={addLight} alt="" />
+              </Button>
+            </ButtonsWrapper>
           </ButtonWrapper>
           <SearchForm style={animateForm}>
             <Button
@@ -95,10 +105,9 @@ export default function ClubList({ clubs }) {
                   ? 'none'
                   : window.location.pathname === '/'
                   ? '3px solid white'
-                  : window.location.pathname === '/clubs/map'
-                  ? '3px solid #494e61'
-                  : ''
+                  : '3px solid #494e61'
               }`,
+              opacity: `${window.location.pathname === '/' ? '1' : '0.5'}`,
             }}
           >
             Vereine
@@ -109,21 +118,31 @@ export default function ClubList({ clubs }) {
               borderBottom: `${
                 !toggle
                   ? 'none'
-                  : window.location.pathname === '/'
-                  ? '3px solid #494e61'
                   : window.location.pathname === '/clubs/map'
                   ? '3px solid white'
-                  : ''
+                  : '3px solid #494e61'
+              }`,
+              opacity: `${
+                window.location.pathname === '/clubs/map' ? '1' : '0.5'
               }`,
             }}
           >
             Maps
           </Tab>
           <Tab
+            to="/player"
             style={{
-              borderBottom: `${!toggle ? 'none' : '3px solid #494e61'}`,
+              borderBottom: `${
+                !toggle
+                  ? 'none'
+                  : window.location.pathname === '/player'
+                  ? '3px solid white'
+                  : '3px solid #494e61'
+              }`,
+              opacity: `${
+                window.location.pathname === '/player' ? '1' : '0.5'
+              }`,
             }}
-            to=""
           >
             Spieler
           </Tab>
@@ -147,6 +166,32 @@ export default function ClubList({ clubs }) {
         </ClubListContainer>
       ) : window.location.pathname === '/clubs/map' ? (
         <MapContainer clubs={result} />
+      ) : window.location.pathname === '/player' ? (
+        <ClubListContainer>
+          {player
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map(
+              ({
+                profileImg,
+                name,
+                websiteURL,
+                _id,
+                phoneNumber,
+                mail,
+                slug,
+              }) => (
+                <Player
+                  key={_id}
+                  logo={profileImg}
+                  name={name}
+                  websiteURL={websiteURL}
+                  phoneNumber={phoneNumber}
+                  mail={mail}
+                  slug={slug}
+                />
+              )
+            )}
+        </ClubListContainer>
       ) : (
         ''
       )}
@@ -195,6 +240,7 @@ const SearchForm = styled(animated.form)`
   overflow: hidden;
   height: 50px;
   width: 100%;
+  z-index: 200;
 `
 const SearchInput = styled.input`
   height: 100%;
@@ -213,8 +259,23 @@ const SearchInput = styled.input`
 
 const ButtonWrapper = styled(animated.div)`
   display: flex;
+  justify-content: space-between;
+  height: 50px;
+`
+
+const ButtonsWrapper = styled.div`
+  display: flex;
   justify-content: flex-end;
   height: 50px;
+`
+
+const LogoWrapper = styled.div`
+  height: 50px;
+  padding-top: 5px;
+  padding-left: 5px;
+  img {
+    height: 100%;
+  }
 `
 
 const Button = styled(Link)`
@@ -234,6 +295,7 @@ const Button = styled(Link)`
 `
 const ClubListContainer = styled.div`
   overflow: scroll;
+  z-index: 100;
   ::-webkit-scrollbar {
     display: none;
   }

@@ -33,14 +33,14 @@ export default function NewClubInput({
 
 const Input = styled.input`
   background-color: transparent;
-  color: white;
+  color: var(--dark);
   padding: 8px 8px 8px 0;
   font-size: 1.6rem;
   height: 40px;
   outline: none;
   display: block;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--dark);
   &[type='file'] {
     display: none;
   }
@@ -54,7 +54,7 @@ const Input = styled.input`
 
   &::placeholder {
     font-size: 1.6rem;
-    color: whitesmoke;
+    color: #6b7083;
   }
 
   &:focus {

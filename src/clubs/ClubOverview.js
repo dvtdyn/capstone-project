@@ -7,11 +7,12 @@ import websiteIcon from '../assets/icons/website_dark.svg'
 import leftArrowLight from '../assets/icons/left-arrow-light.svg'
 import location from '../assets/icons/location.svg'
 import verifiedLight from '../assets/icons/verified-light.svg'
+import closeIcon from '../assets/icons/close.svg'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import Team from './Team'
 import MapsStatic from './MapsStatic'
 
-export default function ClubOverview({ clubs, onSubmit }) {
+export default function ClubOverview({ clubs, onSubmit, onBackClick }) {
   const history = useHistory()
   const { slug } = useParams()
   const club = slug ? getClubFromSlug(slug) || {} : clubs
@@ -24,6 +25,9 @@ export default function ClubOverview({ clubs, onSubmit }) {
 
   return (
     <Grid style={slug ? { gridTemplateRows: 'auto' } : { display: 'grid' }}>
+      <CloseWrapper onClick={onBackClick}>
+        <Close src={closeIcon} />
+      </CloseWrapper>
       <ClubOverviewContainer>
         <ClubImage src={club.image} />
         <ClubTextWrapper logo={club.logo}>
@@ -63,6 +67,8 @@ export default function ClubOverview({ clubs, onSubmit }) {
                   {club.address && `${club.address.zip} ${club.address.city}`}
                 </Address>
               </AddressWrapper>
+              <div></div>
+
               <MapsStatic
                 address={
                   club.address &&
@@ -245,7 +251,7 @@ const LocationWrapper = styled(Link)`
   display: grid;
   grid-auto-columns: columns;
   padding-bottom: 10px;
-  grid-template-columns: auto 10px 1fr 80px;
+  grid-template-columns: auto 10px auto 10px 1fr;
   text-decoration: none;
 `
 const LogoWrapper = styled.div`
@@ -274,4 +280,18 @@ const Address = styled.p`
   overflow: hidden;
   white-space: nowrap;
   cursor: default;
+`
+const CloseWrapper = styled.div`
+  height: 50px;
+  width: 50px;
+  padding: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  cursor: default;
+`
+const Close = styled.img`
+  height: 100%;
+  width: 100%;
 `
