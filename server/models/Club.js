@@ -22,6 +22,10 @@ const clubSchema = new Schema(
       street: String,
       houseNumber: String,
       city: String,
+      location: {
+        lat: Number,
+        lng: Number,
+      },
     },
   },
   { versionKey: false }

@@ -29,6 +29,7 @@ export default function App() {
 
   function handleOnSubmit(clubData) {
     setNewClub(clubData)
+    window.location = '/club/preview'
   }
 
   function handleBackClick() {
@@ -44,6 +45,10 @@ export default function App() {
           <Route exact path="/">
             <ClubList clubs={clubs} />
           </Route>
+          <Route exact path="/clubs/map">
+            <ClubList clubs={clubs} />
+          </Route>
+
           <Route exact path="/club/add-new-club">
             <NewClub onSubmit={handleOnSubmit} onBackClick={handleBackClick} />
           </Route>
