@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ClubOverview from './clubs/ClubOverview'
 import { getClubs, postClub } from './services.js'
 import NewClub from './clubs/NewClub'
-import MapContainer from './clubs/MapContainer'
 
 export default function App() {
   const [clubs, setClubs] = useState([])
@@ -30,6 +29,7 @@ export default function App() {
 
   function handleOnSubmit(clubData) {
     setNewClub(clubData)
+    window.location = '/club/preview'
   }
 
   function handleBackClick() {
@@ -46,7 +46,7 @@ export default function App() {
             <ClubList clubs={clubs} />
           </Route>
           <Route exact path="/clubs/map">
-            <MapContainer />
+            <ClubList clubs={clubs} />
           </Route>
 
           <Route exact path="/club/add-new-club">

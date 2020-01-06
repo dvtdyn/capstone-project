@@ -5,9 +5,11 @@ import phoneIcon from '../assets/icons/phone_dark.svg'
 import mailIcon from '../assets/icons/mail_dark.svg'
 import websiteIcon from '../assets/icons/website_dark.svg'
 import leftArrowLight from '../assets/icons/left-arrow-light.svg'
+import location from '../assets/icons/location.svg'
 import verifiedLight from '../assets/icons/verified-light.svg'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 import Team from './Team'
+import MapsStatic from './MapsStatic'
 
 export default function ClubOverview({ clubs, onSubmit }) {
   const history = useHistory()
@@ -19,6 +21,7 @@ export default function ClubOverview({ clubs, onSubmit }) {
     onSubmit()
     history.push('/')
   }
+
   return (
     <Grid style={slug ? { gridTemplateRows: 'auto' } : { display: 'grid' }}>
       <ClubOverviewContainer>
@@ -46,11 +49,27 @@ export default function ClubOverview({ clubs, onSubmit }) {
             </ButtonsWrapper>
           </Wrapper>
           <Wrapper>
-            <h2>Adresse</h2>
-            <p>
-              {club.address &&
-                `${club.address.street} ${club.address.houseNumber}, ${club.address.zip} ${club.address.city}`}
-            </p>
+            <LocationWrapper to="/clubs/map">
+              <LogoWrapper>
+                <Logo src={location} />
+              </LogoWrapper>
+              <div></div>
+              <AddressWrapper>
+                <Address>
+                  {club.address &&
+                    `${club.address.street} ${club.address.houseNumber}`}
+                </Address>
+                <Address>
+                  {club.address && `${club.address.zip} ${club.address.city}`}
+                </Address>
+              </AddressWrapper>
+              <MapsStatic
+                address={
+                  club.address &&
+                  `${club.address.location.lat},${club.address.location.lng}`
+                }
+              />
+            </LocationWrapper>
           </Wrapper>
           <Wrapper style={{ borderBottom: 'none' }}>
             <h2>Teams</h2>
@@ -110,7 +129,7 @@ const ClubOverviewContainer = styled.div`
 const ClubTextWrapper = styled.div`
   display: grid;
   position: relative;
-  grid-template-rows: 90px 80px auto;
+  grid-template-rows: 90px auto 1fr;
   padding: 10px;
   border-radius: 40px 40px 0 0;
   background: white;
@@ -154,7 +173,7 @@ const Wrapper = styled.section`
   }
 
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--dark);
     /* color: #fff; */
     font-weight: 300;
@@ -164,7 +183,7 @@ const Wrapper = styled.section`
     white-space: nowrap;
   }
   h3 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     color: var(--dark);
     /* color: #fff; */
     font-weight: 300;
@@ -175,7 +194,7 @@ const Wrapper = styled.section`
     white-space: nowrap;
     & + p {
       color: var(--dark);
-      /* color: #fff; */
+      font-size: 1.6rem;
       font-weight: 300;
       margin: 0;
       padding: 0 10px 0 20px;
@@ -184,17 +203,16 @@ const Wrapper = styled.section`
       white-space: nowrap;
     }
   }
-  p {
-    font-size: 2rem;
+  /* p {
+    font-size: 1.6rem;
     color: var(--dark) f;
-    /* color: #fff; */
     font-weight: 300;
     margin: 0;
     padding: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-  }
+  } */
 `
 
 const ButtonsWrapper = styled.div`
@@ -221,4 +239,39 @@ const ImgLabel = styled.label`
 
 const Input = styled.input`
   display: none;
+`
+
+const LocationWrapper = styled(Link)`
+  display: grid;
+  grid-auto-columns: columns;
+  padding-bottom: 10px;
+  grid-template-columns: auto 10px 1fr 80px;
+  text-decoration: none;
+`
+const LogoWrapper = styled.div`
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  cursor: default;
+`
+const Logo = styled.img`
+  height: 100%;
+  width: 100%;
+`
+const AddressWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 28px 28px;
+`
+const Address = styled.p`
+  padding: 0;
+  padding-right: 10px;
+
+  margin: 0;
+  font-weight: 300;
+  color: #494e61;
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: default;
 `
