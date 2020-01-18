@@ -41,6 +41,5 @@ TeamInput.propTypes = {
 const TeamsContentWrapper = styled.div`
   display: grid;
   gap: 20px;
-  padding-left: 8px;
-  grid-template-columns: auto 120px;
+  grid-template-columns: 1fr 120px;
 `

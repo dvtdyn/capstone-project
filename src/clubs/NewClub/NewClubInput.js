@@ -36,7 +36,7 @@ const Input = styled.input`
   color: var(--dark);
   padding: 8px 8px 8px 0;
   font-size: 1.6rem;
-  height: 40px;
+  height: 36px;
   outline: none;
   display: block;
   border: none;
