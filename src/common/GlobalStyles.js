@@ -14,9 +14,6 @@ export default createGlobalStyle`
 
   body{
     margin: 0;
-    /* background: #20243c; */
-    /* background: var(--dark); */
-    height: 100vh;
     overflow:hidden;
   }
 
