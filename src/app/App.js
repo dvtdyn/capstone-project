@@ -37,7 +37,7 @@ export default function App() {
       setPlayer(res)
     })
   }, [])
-  console.log(player)
+
   return (
     <Router>
       <Grid>
@@ -100,6 +100,7 @@ export default function App() {
   function onSearchButtonClick() {
     setToggle(!toggle)
     searchInputRef.current.focus()
+    searchInputRef.current.value = ''
   }
 
   function onInput(event) {
