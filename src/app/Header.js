@@ -16,7 +16,7 @@ export default function Header({
   onInput,
   closeSearch,
   searchInputRef,
-  searchInput,
+  LinkAddNewElement,
 }) {
   const animateButton = useSpring({
     width: !toggle ? '0%' : '100%',
@@ -37,7 +37,7 @@ export default function Header({
           <Logo src={logo} />
           <div>
             <Button onClick={onSearchButtonClick} src={searchIcon} />
-            <LinkStyled to="/club/add-new-club">
+            <LinkStyled to={LinkAddNewElement}>
               <img src={addLight} alt="" />
             </LinkStyled>
           </div>

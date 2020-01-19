@@ -2,16 +2,18 @@ import React, { useState, useEffect, useRef } from 'react'
 import ClubList from '../clubs/ClubList'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ClubOverview from '../clubs/ClubOverview'
-import { getClubs, postClub } from '../services.js'
+import { getClubs, postClub, getPlayer, postPlayer } from '../services.js'
 import NewClub from '../clubs/NewClub/NewClub'
 import Header from './Header'
 import MapContainer from '../clubs/MapContainer'
 import styled from 'styled-components/macro'
-import PlayerList from '../players/PlayerList'
+import PlayerList from '../player/PlayerList'
+import NewPlayer from '../player/NewPlayer/NewPlayer.js'
 
 export default function App() {
   const [clubs, setClubs] = useState([])
   const [newClub, setNewClub] = useState({})
+  const [player, setPlayer] = useState([])
   const [toggle, setToggle] = useState(true)
   const searchInputRef = useRef()
   const [searchInput, setSearchInput] = useState('')
@@ -30,6 +32,12 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    getPlayer().then(res => {
+      setPlayer(res)
+    })
+  }, [])
+  console.log(player)
   return (
     <Router>
       <Grid>
@@ -41,6 +49,7 @@ export default function App() {
               onInput={onInput}
               closeSearch={closeSearch}
               searchInputRef={searchInputRef}
+              LinkAddNewElement="/club/add-new-club"
             />
             <ClubList clubs={clubs} searchInput={searchInput} />
           </Route>
@@ -51,22 +60,30 @@ export default function App() {
               onInput={onInput}
               closeSearch={closeSearch}
               searchInputRef={searchInputRef}
+              LinkAddNewElement="/club/add-new-club"
             />
             <MapContainer clubs={clubs} searchInput={searchInput} />
           </Route>
-          <Route path="/player">
+          <Route exact path="/player">
             <Header
               toggle={toggle}
               onSearchButtonClick={onSearchButtonClick}
               onInput={onInput}
               closeSearch={closeSearch}
               searchInputRef={searchInputRef}
+              LinkAddNewElement="/player/add-new-player"
             />
-            <PlayerList searchInput={searchInput} />
+            <PlayerList player={player} searchInput={searchInput} />
           </Route>
 
           <Route exact path="/club/add-new-club">
             <NewClub onSubmit={handleOnSubmit} onBackClick={handleBackClick} />
+          </Route>
+          <Route exact path="/player/add-new-player">
+            <NewPlayer
+              onSubmit={createNewPlayer}
+              onBackClick={handleBackClick}
+            />
           </Route>
 
           <Route path="/club/preview">
@@ -101,6 +118,15 @@ export default function App() {
     postClub(clubsData).then(club => {
       setClubs([...clubs, club])
       getClubs().then(res => setClubs(res))
+    })
+    localStorage.clear()
+  }
+
+  function createNewPlayer(playerData) {
+    setPlayer([...player, playerData])
+    postPlayer(playerData).then(newPlayer => {
+      setPlayer([...player, newPlayer])
+      getPlayer().then(res => setPlayer(res))
     })
     localStorage.clear()
   }
