@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
 const Club = require('./models/Club')
 const Team = require('./models/Team')
+const Player = require('./models/Player')
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+
 mongoose.connect('mongodb://localhost:27017/capstone-project', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -22,7 +24,11 @@ app.get('/clubs/', (req, res) => {
     .then(clubs => res.json(clubs))
     .catch(err => res.json(err))
 })
-
+app.get('/player/', (req, res) => {
+  Player.find()
+    .then(player => res.json(player))
+    .catch(err => res.json(err))
+})
 app.get('/club/:slug', (req, res) => {
   Club.find()
     .populate('teams')
@@ -39,4 +45,10 @@ app.post('/clubs', (req, res) => {
       .then(club => res.json(club))
       .catch(err => res.json(err))
   })
+})
+
+app.post('/player', (req, res) => {
+  Player.create(req.body)
+    .then(newPlayer => res.json(newPlayer))
+    .catch(err => res.json(err))
 })

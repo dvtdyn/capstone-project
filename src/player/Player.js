@@ -1,44 +1,45 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import insta from '../assets/icons/insta.svg'
-import facebook from '../assets/icons/facebook.svg'
+import instaLogo from '../assets/icons/insta.svg'
+import facebookLogo from '../assets/icons/facebook.svg'
 import phoneIcon from '../assets/icons/phone_dark.svg'
 import mailIcon from '../assets/icons/mail_dark.svg'
-import ClubButton from '../clubs/ClubButton'
-import { Link } from 'react-router-dom'
+import PlayerButton from './PlayerButton.js'
 
 export default function Club({
-  logo,
+  profileImage,
   name,
-  websiteURL,
+  instagram,
   phoneNumber,
   mail,
-  slug,
+  facebook,
 }) {
-  const clubUrl = `/club/${slug}`
-
   return (
     <ClubBody>
-      <LinkWrapper to={clubUrl}>
-        <Logo src={logo} />
-      </LinkWrapper>
+      <ImageWrapper>
+        <ProfileImage src={profileImage} />
+      </ImageWrapper>
       <ClubTextWrapper>
-        <ClubName to={clubUrl}>{name.toUpperCase()}</ClubName>
+        <PlayerName>{name.toUpperCase()}</PlayerName>
         <ButtonsWrapper>
-          <ClubButton href={'tel:' + phoneNumber} src={phoneIcon} alt="Phone" />
-          <ClubButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
-          <ClubButton
+          <PlayerButton
+            href={'tel:' + phoneNumber}
+            src={phoneIcon}
+            alt="Phone"
+          />
+          <PlayerButton href={'mailto:' + mail} src={mailIcon} alt="Mail" />
+          <PlayerButton
             style={{ padding: '10px' }}
-            href={websiteURL}
-            src={insta}
+            href={instagram}
+            src={instaLogo}
             alt="Website"
             target="_blank"
           />
-          <ClubButton
+          <PlayerButton
             style={{ padding: '10px' }}
-            href={websiteURL}
-            src={facebook}
-            alt="Website"
+            href={facebook}
+            src={facebookLogo}
+            alt="Facebook"
             target="_blank"
           />
         </ButtonsWrapper>
@@ -55,7 +56,7 @@ const ClubBody = styled.section`
   align-content: center;
   text-decoration: none;
 `
-const LinkWrapper = styled(Link)`
+const ImageWrapper = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 16px;
@@ -65,7 +66,7 @@ const LinkWrapper = styled(Link)`
   cursor: default;
 `
 
-const Logo = styled.img`
+const ProfileImage = styled.img`
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -77,7 +78,7 @@ const ClubTextWrapper = styled.div`
   padding-left: 5px;
 `
 
-const ClubName = styled(Link)`
+const PlayerName = styled.div`
   margin: 0;
   font-weight: 300;
   color: #494e61;

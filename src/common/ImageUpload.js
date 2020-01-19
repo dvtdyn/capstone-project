@@ -16,6 +16,8 @@ export default function ImageUpload(event, setLoading, onImageSave) {
     setLoading({ imageLoading: true })
   } else if (name === 'logo') {
     setLoading({ logoLoading: true })
+  } else if (name === 'profileImage') {
+    setLoading({ profileImageLoading: true })
   }
 
   axios

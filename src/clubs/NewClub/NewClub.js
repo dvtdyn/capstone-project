@@ -61,7 +61,7 @@ export default function NewClub({ onSubmit, onBackClick }) {
   return (
     <NewClubForm onSubmit={handleSubmit}>
       <InputContainer>
-        <h1>DEIN VEREIN !</h1>
+        <h1>DEIN VEREIN</h1>
 
         <ImageUploadInputs
           newClub={newClub}
