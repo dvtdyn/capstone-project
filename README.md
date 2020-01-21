@@ -1,3 +1,5 @@
+<img src="./src/assets/images/sfl.gif" alt="SfL Preview"  style="max-width:100%;">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
